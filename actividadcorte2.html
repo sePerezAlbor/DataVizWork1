@@ -1,0 +1,1594 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'actividadcorte2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Factividadcorte2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/actividadcorte2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datatype</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;ANIO_PRECIO&#39;</span><span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MES_PRECIO&#39;</span> <span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;DIA_PRECIO&#39;</span> <span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CODIGO_MUNICIPIO_DANE&#39;</span> <span class="p">:</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;PreciosGasNaturalVehicula.csv&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">datatype</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>FECHA_PRECIO</th>
+      <th>ANIO_PRECIO</th>
+      <th>MES_PRECIO</th>
+      <th>DIA_PRECIO</th>
+      <th>DEPARTAMENTO_EDS</th>
+      <th>MUNICIPIO_EDS</th>
+      <th>NOMBRE_COMERCIAL_EDS</th>
+      <th>PRECIO_PROMEDIO_PUBLICADO</th>
+      <th>TIPO_COMBUSTIBLE</th>
+      <th>CODIGO_MUNICIPIO_DANE</th>
+      <th>LATITUD_MUNICIPIO</th>
+      <th>LONGITUD_MUNICIPIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024-09-01</td>
+      <td>2024</td>
+      <td>09</td>
+      <td>01</td>
+      <td>SANTANDER</td>
+      <td>BUCARAMANGA</td>
+      <td>CAMOVA</td>
+      <td>2299</td>
+      <td>GNCV</td>
+      <td>68001</td>
+      <td>7.155834</td>
+      <td>-73.111572</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-01</td>
+      <td>2024</td>
+      <td>07</td>
+      <td>01</td>
+      <td>SANTANDER</td>
+      <td>BUCARAMANGA</td>
+      <td>CAMOVA</td>
+      <td>2249</td>
+      <td>GNCV</td>
+      <td>68001</td>
+      <td>7.155834</td>
+      <td>-73.111572</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024-10-01</td>
+      <td>2024</td>
+      <td>10</td>
+      <td>01</td>
+      <td>CUNDINAMARCA</td>
+      <td>CHIA</td>
+      <td>CHIA EDS - GNV</td>
+      <td>2787</td>
+      <td>GNCV</td>
+      <td>25175</td>
+      <td>4.857824</td>
+      <td>-74.038094</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024-10-01</td>
+      <td>2024</td>
+      <td>10</td>
+      <td>01</td>
+      <td>CALDAS</td>
+      <td>MANIZALES</td>
+      <td>ESTACIÓN DE SERVICIO CALDAS</td>
+      <td>3324</td>
+      <td>GNCV</td>
+      <td>17001</td>
+      <td>5.083433</td>
+      <td>-75.507278</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024-10-01</td>
+      <td>2024</td>
+      <td>10</td>
+      <td>01</td>
+      <td>BOGOTA D.C.</td>
+      <td>BOGOTA, D.C.</td>
+      <td>ESTACION DE SERVICIO COMBUSCOL EL DORADO</td>
+      <td>2718</td>
+      <td>GNCV</td>
+      <td>11001</td>
+      <td>4.652954</td>
+      <td>-74.083565</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2024-10-01</td>
+      <td>2024</td>
+      <td>10</td>
+      <td>01</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>ESTACION DE SERVICIOS LAS CEIBAS CALI S.A.S.</td>
+      <td>3336</td>
+      <td>GNCV</td>
+      <td>76001</td>
+      <td>3.399044</td>
+      <td>-76.576492</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2024-10-01</td>
+      <td>2024</td>
+      <td>10</td>
+      <td>01</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>ESTACION DE SERVICIO TERPEL CAÑAVERALEJO - GNV</td>
+      <td>3367</td>
+      <td>GNCV</td>
+      <td>76001</td>
+      <td>3.399044</td>
+      <td>-76.576492</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2024-10-01</td>
+      <td>2024</td>
+      <td>10</td>
+      <td>01</td>
+      <td>RISARALDA</td>
+      <td>PEREIRA</td>
+      <td>EDS SANTA HELENA</td>
+      <td>2869</td>
+      <td>GNCV</td>
+      <td>66001</td>
+      <td>4.803663</td>
+      <td>-75.795792</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2024-10-01</td>
+      <td>2024</td>
+      <td>10</td>
+      <td>01</td>
+      <td>BOGOTA D.C.</td>
+      <td>BOGOTA, D.C.</td>
+      <td>ESTACION DE SERVICIO COMBUSCOL HEROES</td>
+      <td>2717</td>
+      <td>GNCV</td>
+      <td>11001</td>
+      <td>4.652954</td>
+      <td>-74.083565</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2024-10-01</td>
+      <td>2024</td>
+      <td>10</td>
+      <td>01</td>
+      <td>VALLE DEL CAUCA</td>
+      <td>CALI</td>
+      <td>ESTACION DE SERVICIO AUTOMOTRIZ GUADUALES GNV</td>
+      <td>3367</td>
+      <td>GNCV</td>
+      <td>76001</td>
+      <td>3.399044</td>
+      <td>-76.576492</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 9863 entries, 0 to 9862
+Data columns (total 12 columns):
+ #   Column                     Non-Null Count  Dtype         
+---  ------                     --------------  -----         
+ 0   FECHA_PRECIO               9863 non-null   datetime64[ns]
+ 1   ANIO_PRECIO                9863 non-null   object        
+ 2   MES_PRECIO                 9863 non-null   object        
+ 3   DIA_PRECIO                 9863 non-null   object        
+ 4   DEPARTAMENTO_EDS           9863 non-null   object        
+ 5   MUNICIPIO_EDS              9863 non-null   object        
+ 6   NOMBRE_COMERCIAL_EDS       9863 non-null   object        
+ 7   PRECIO_PROMEDIO_PUBLICADO  9863 non-null   int64         
+ 8   TIPO_COMBUSTIBLE           9863 non-null   object        
+ 9   CODIGO_MUNICIPIO_DANE      9863 non-null   object        
+ 10  LATITUD_MUNICIPIO          9863 non-null   float64       
+ 11  LONGITUD_MUNICIPIO         9863 non-null   float64       
+dtypes: datetime64[ns](1), float64(2), int64(1), object(8)
+memory usage: 924.8+ KB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;SANTANDER&#39;, &#39;CUNDINAMARCA&#39;, &#39;CALDAS&#39;, &#39;BOGOTA D.C.&#39;,
+       &#39;VALLE DEL CAUCA&#39;, &#39;RISARALDA&#39;, &#39;ATLANTICO&#39;, &#39;TOLIMA&#39;, &#39;ANTIOQUIA&#39;,
+       &#39;QUINDIO&#39;, &#39;MAGDALENA&#39;, &#39;CAUCA&#39;, &#39;BOLIVAR&#39;, &#39;CESAR&#39;, &#39;META&#39;,
+       &#39;SUCRE&#39;, &#39;CORDOBA&#39;, &#39;BOYACA&#39;, &#39;CASANARE&#39;, &#39;HUILA&#39;, &#39;CAQUETA&#39;,
+       &#39;LA GUAJIRA&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;BUCARAMANGA&#39;, &#39;CHIA&#39;, &#39;MANIZALES&#39;, &#39;BOGOTA, D.C.&#39;, &#39;CALI&#39;,
+       &#39;PEREIRA&#39;, &#39;BARRANQUILLA&#39;, &#39;PALMIRA&#39;, &#39;IBAGUE&#39;, &#39;MEDELLIN&#39;,
+       &#39;CALARCA&#39;, &#39;ARMENIA&#39;, &#39;SANTA MARTA&#39;, &#39;POPAYAN&#39;,
+       &#39;CARTAGENA DE INDIAS&#39;, &#39;BELLO&#39;, &#39;VALLEDUPAR&#39;, &#39;TULUA&#39;, &#39;BARBOSA&#39;,
+       &#39;BOSCONIA&#39;, &#39;MOSQUERA&#39;, &#39;MALAMBO&#39;, &#39;PUERTO COLOMBIA&#39;, &#39;CUMARAL&#39;,
+       &#39;COROZAL&#39;, &#39;COTA&#39;, &#39;PLANETA RICA&#39;, &#39;SOACHA&#39;, &#39;SOPO&#39;, &#39;YUMBO&#39;,
+       &#39;PIEDECUESTA&#39;, &#39;DUITAMA&#39;, &#39;APARTADO&#39;, &#39;CHIQUINQUIRA&#39;, &#39;SABANETA&#39;,
+       &#39;RIONEGRO&#39;, &#39;YOPAL&#39;, &#39;SOGAMOSO&#39;, &#39;SAHAGUN&#39;, &#39;MONTERIA&#39;, &#39;SOLEDAD&#39;,
+       &#39;JAMUNDI&#39;, &#39;BARRANCABERMEJA&#39;, &#39;SOTAQUIRA&#39;, &#39;ITAGUI&#39;,
+       &#39;VILLAVICENCIO&#39;, &#39;CARTAGO&#39;, &#39;TUNJA&#39;, &#39;CIENAGA&#39;, &#39;DOSQUEBRADAS&#39;,
+       &#39;GIRON&#39;, &#39;NEIVA&#39;, &#39;SINCELEJO&#39;, &#39;LA DORADA&#39;, &#39;ENVIGADO&#39;,
+       &#39;FACATATIVA&#39;, &#39;PAILITAS&#39;, &#39;FLORIDABLANCA&#39;, &#39;AGUAZUL&#39;, &#39;ARMERO&#39;,
+       &#39;ESPINAL&#39;, &#39;GUADALAJARA DE BUGA&#39;, &#39;SANTANDER DE QUILICHAO&#39;,
+       &#39;FLORENCIA&#39;, &#39;VENADILLO&#39;, &#39;GIRARDOT&#39;, &#39;LA UNION&#39;, &#39;BUENAVENTURA&#39;,
+       &#39;LA MESA&#39;, &#39;FUNZA&#39;, &#39;GUARNE&#39;, &#39;TURBACO&#39;, &#39;LA CEJA&#39;, &#39;LEBRIJA&#39;,
+       &#39;FUSAGASUGA&#39;, &#39;SAN PEDRO&#39;, &#39;ROLDANILLO&#39;, &#39;CHINCHINA&#39;, &#39;SITIONUEVO&#39;,
+       &#39;MAGANGUE&#39;, &#39;FLORIDA&#39;, &#39;RIOFRIO&#39;, &#39;MADRID&#39;, &#39;AGUACHICA&#39;,
+       &#39;PAZ DE ARIPORO&#39;, &#39;RIOHACHA&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">)[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEPARTAMENTO_EDS
+ANTIOQUIA          [MEDELLIN, BELLO, APARTADO, SABANETA, RIONEGRO...
+ATLANTICO          [BARRANQUILLA, MALAMBO, PUERTO COLOMBIA, SOLEDAD]
+BOGOTA D.C.                                           [BOGOTA, D.C.]
+BOLIVAR                     [CARTAGENA DE INDIAS, TURBACO, MAGANGUE]
+BOYACA             [DUITAMA, CHIQUINQUIRA, SOGAMOSO, SOTAQUIRA, T...
+CALDAS                             [MANIZALES, LA DORADA, CHINCHINA]
+CAQUETA                                                  [FLORENCIA]
+CASANARE                            [YOPAL, AGUAZUL, PAZ DE ARIPORO]
+CAUCA                              [POPAYAN, SANTANDER DE QUILICHAO]
+CESAR                    [VALLEDUPAR, BOSCONIA, PAILITAS, AGUACHICA]
+CORDOBA                            [PLANETA RICA, SAHAGUN, MONTERIA]
+CUNDINAMARCA       [CHIA, MOSQUERA, COTA, SOACHA, SOPO, FACATATIV...
+HUILA                                                        [NEIVA]
+LA GUAJIRA                                                [RIOHACHA]
+MAGDALENA                         [SANTA MARTA, CIENAGA, SITIONUEVO]
+META                                        [CUMARAL, VILLAVICENCIO]
+QUINDIO                                           [CALARCA, ARMENIA]
+RISARALDA                                    [PEREIRA, DOSQUEBRADAS]
+SANTANDER          [BUCARAMANGA, BARBOSA, PIEDECUESTA, BARRANCABE...
+SUCRE                                [COROZAL, SINCELEJO, SAN PEDRO]
+TOLIMA                          [IBAGUE, ARMERO, ESPINAL, VENADILLO]
+VALLE DEL CAUCA    [CALI, PALMIRA, TULUA, YUMBO, JAMUNDI, CARTAGO...
+Name: MUNICIPIO_EDS, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">)[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEPARTAMENTO_EDS
+ANTIOQUIA          10
+ATLANTICO           4
+BOGOTA D.C.         1
+BOLIVAR             3
+BOYACA              5
+CALDAS              3
+CAQUETA             1
+CASANARE            3
+CAUCA               2
+CESAR               4
+CORDOBA             3
+CUNDINAMARCA       11
+HUILA               1
+LA GUAJIRA          1
+MAGDALENA           3
+META                2
+QUINDIO             2
+RISARALDA           2
+SANTANDER           7
+SUCRE               3
+TOLIMA              4
+VALLE DEL CAUCA    12
+Name: MUNICIPIO_EDS, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ANIO_PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2024&#39;, &#39;2025&#39;, &#39;2022&#39;, &#39;2023&#39;, &#39;2021&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;MES_PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;01&#39;, &#39;02&#39;, &#39;03&#39;, &#39;04&#39;, &#39;05&#39;, &#39;06&#39;, &#39;07&#39;, &#39;08&#39;, &#39;09&#39;, &#39;10&#39;, &#39;11&#39;, &#39;12&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DIA_PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;01&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conteo_fechas</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">conteo_fechas</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">conteo_fechas</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Rango de Tiempo y Frecuencia de Datos&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Número de Registros&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0fba92e806328770aa5d5e5c146d9b2c398a78d94699c2aff86650cfeb476219.png" src="_images/0fba92e806328770aa5d5e5c146d9b2c398a78d94699c2aff86650cfeb476219.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2021</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FECHA_PRECIO.dt.year == 2021&quot;</span><span class="p">)</span>
+<span class="n">df_2022</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FECHA_PRECIO.dt.year == 2022&quot;</span><span class="p">)</span>
+<span class="n">df_2023</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FECHA_PRECIO.dt.year == 2023&quot;</span><span class="p">)</span>
+<span class="n">df_2024</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FECHA_PRECIO.dt.year == 2024&quot;</span><span class="p">)</span>
+<span class="n">df_2025</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;FECHA_PRECIO.dt.year == 2025&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2021</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>PRECIO_PROMEDIO_PUBLICADO</th>
+    </tr>
+    <tr>
+      <th>DEPARTAMENTO_EDS</th>
+      <th>MUNICIPIO_EDS</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="6" valign="top">ANTIOQUIA</th>
+      <th>APARTADO</th>
+      <td>1811.00</td>
+    </tr>
+    <tr>
+      <th>BELLO</th>
+      <td>1794.06</td>
+    </tr>
+    <tr>
+      <th>ITAGUI</th>
+      <td>1793.00</td>
+    </tr>
+    <tr>
+      <th>MEDELLIN</th>
+      <td>1808.33</td>
+    </tr>
+    <tr>
+      <th>RIONEGRO</th>
+      <td>1870.32</td>
+    </tr>
+    <tr>
+      <th>SABANETA</th>
+      <td>1815.00</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">ATLANTICO</th>
+      <th>BARRANQUILLA</th>
+      <td>1559.55</td>
+    </tr>
+    <tr>
+      <th>PUERTO COLOMBIA</th>
+      <td>1595.42</td>
+    </tr>
+    <tr>
+      <th>SOLEDAD</th>
+      <td>1573.17</td>
+    </tr>
+    <tr>
+      <th>BOGOTA D.C.</th>
+      <th>BOGOTA, D.C.</th>
+      <td>1708.31</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">BOLIVAR</th>
+      <th>CARTAGENA DE INDIAS</th>
+      <td>1648.55</td>
+    </tr>
+    <tr>
+      <th>MAGANGUE</th>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th>TURBACO</th>
+      <td>1677.00</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">BOYACA</th>
+      <th>CHIQUINQUIRA</th>
+      <td>1228.43</td>
+    </tr>
+    <tr>
+      <th>DUITAMA</th>
+      <td>1690.00</td>
+    </tr>
+    <tr>
+      <th>SOGAMOSO</th>
+      <td>1264.00</td>
+    </tr>
+    <tr>
+      <th>TUNJA</th>
+      <td>1626.93</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CALDAS</th>
+      <th>CHINCHINA</th>
+      <td>1990.00</td>
+    </tr>
+    <tr>
+      <th>MANIZALES</th>
+      <td>1961.06</td>
+    </tr>
+    <tr>
+      <th>CASANARE</th>
+      <th>YOPAL</th>
+      <td>1762.50</td>
+    </tr>
+    <tr>
+      <th>CAUCA</th>
+      <th>POPAYAN</th>
+      <td>2050.57</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CESAR</th>
+      <th>BOSCONIA</th>
+      <td>1581.73</td>
+    </tr>
+    <tr>
+      <th>VALLEDUPAR</th>
+      <td>1353.09</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CORDOBA</th>
+      <th>MONTERIA</th>
+      <td>1745.26</td>
+    </tr>
+    <tr>
+      <th>PLANETA RICA</th>
+      <td>1649.00</td>
+    </tr>
+    <tr>
+      <th>SAHAGUN</th>
+      <td>1549.00</td>
+    </tr>
+    <tr>
+      <th rowspan="7" valign="top">CUNDINAMARCA</th>
+      <th>CHIA</th>
+      <td>1736.09</td>
+    </tr>
+    <tr>
+      <th>COTA</th>
+      <td>1780.88</td>
+    </tr>
+    <tr>
+      <th>FACATATIVA</th>
+      <td>1809.00</td>
+    </tr>
+    <tr>
+      <th>FUNZA</th>
+      <td>1809.00</td>
+    </tr>
+    <tr>
+      <th>MOSQUERA</th>
+      <td>1810.80</td>
+    </tr>
+    <tr>
+      <th>SOACHA</th>
+      <td>1700.50</td>
+    </tr>
+    <tr>
+      <th>SOPO</th>
+      <td>1832.33</td>
+    </tr>
+    <tr>
+      <th>HUILA</th>
+      <th>NEIVA</th>
+      <td>1945.50</td>
+    </tr>
+    <tr>
+      <th>MAGDALENA</th>
+      <th>SANTA MARTA</th>
+      <td>1646.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">META</th>
+      <th>CUMARAL</th>
+      <td>1589.00</td>
+    </tr>
+    <tr>
+      <th>VILLAVICENCIO</th>
+      <td>1690.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">QUINDIO</th>
+      <th>ARMENIA</th>
+      <td>2074.00</td>
+    </tr>
+    <tr>
+      <th>CALARCA</th>
+      <td>2074.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RISARALDA</th>
+      <th>DOSQUEBRADAS</th>
+      <td>1784.59</td>
+    </tr>
+    <tr>
+      <th>PEREIRA</th>
+      <td>1792.00</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">SANTANDER</th>
+      <th>BARBOSA</th>
+      <td>1763.50</td>
+    </tr>
+    <tr>
+      <th>BUCARAMANGA</th>
+      <td>1687.00</td>
+    </tr>
+    <tr>
+      <th>FLORIDABLANCA</th>
+      <td>1747.20</td>
+    </tr>
+    <tr>
+      <th>GIRON</th>
+      <td>1651.09</td>
+    </tr>
+    <tr>
+      <th>LEBRIJA</th>
+      <td>1799.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SUCRE</th>
+      <th>COROZAL</th>
+      <td>1839.00</td>
+    </tr>
+    <tr>
+      <th>SINCELEJO</th>
+      <td>1619.92</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">TOLIMA</th>
+      <th>IBAGUE</th>
+      <td>1743.72</td>
+    </tr>
+    <tr>
+      <th>VENADILLO</th>
+      <td>1850.00</td>
+    </tr>
+    <tr>
+      <th rowspan="10" valign="top">VALLE DEL CAUCA</th>
+      <th>BUENAVENTURA</th>
+      <td>1987.00</td>
+    </tr>
+    <tr>
+      <th>CALI</th>
+      <td>1787.48</td>
+    </tr>
+    <tr>
+      <th>CARTAGO</th>
+      <td>2040.00</td>
+    </tr>
+    <tr>
+      <th>FLORIDA</th>
+      <td>1980.00</td>
+    </tr>
+    <tr>
+      <th>GUADALAJARA DE BUGA</th>
+      <td>1627.00</td>
+    </tr>
+    <tr>
+      <th>JAMUNDI</th>
+      <td>1810.00</td>
+    </tr>
+    <tr>
+      <th>LA UNION</th>
+      <td>1950.00</td>
+    </tr>
+    <tr>
+      <th>PALMIRA</th>
+      <td>1983.16</td>
+    </tr>
+    <tr>
+      <th>TULUA</th>
+      <td>1956.33</td>
+    </tr>
+    <tr>
+      <th>YUMBO</th>
+      <td>1542.06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2022</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>PRECIO_PROMEDIO_PUBLICADO</th>
+    </tr>
+    <tr>
+      <th>DEPARTAMENTO_EDS</th>
+      <th>MUNICIPIO_EDS</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">ANTIOQUIA</th>
+      <th>APARTADO</th>
+      <td>2020.00</td>
+    </tr>
+    <tr>
+      <th>BARBOSA</th>
+      <td>2066.25</td>
+    </tr>
+    <tr>
+      <th>BELLO</th>
+      <td>2059.37</td>
+    </tr>
+    <tr>
+      <th>ENVIGADO</th>
+      <td>2251.67</td>
+    </tr>
+    <tr>
+      <th>ITAGUI</th>
+      <td>2178.77</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">VALLE DEL CAUCA</th>
+      <th>LA UNION</th>
+      <td>2121.43</td>
+    </tr>
+    <tr>
+      <th>PALMIRA</th>
+      <td>2231.28</td>
+    </tr>
+    <tr>
+      <th>ROLDANILLO</th>
+      <td>2199.09</td>
+    </tr>
+    <tr>
+      <th>TULUA</th>
+      <td>2279.06</td>
+    </tr>
+    <tr>
+      <th>YUMBO</th>
+      <td>1956.18</td>
+    </tr>
+  </tbody>
+</table>
+<p>68 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2023</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>PRECIO_PROMEDIO_PUBLICADO</th>
+    </tr>
+    <tr>
+      <th>DEPARTAMENTO_EDS</th>
+      <th>MUNICIPIO_EDS</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">ANTIOQUIA</th>
+      <th>APARTADO</th>
+      <td>2421.82</td>
+    </tr>
+    <tr>
+      <th>BARBOSA</th>
+      <td>2413.33</td>
+    </tr>
+    <tr>
+      <th>BELLO</th>
+      <td>2421.92</td>
+    </tr>
+    <tr>
+      <th>ENVIGADO</th>
+      <td>2418.50</td>
+    </tr>
+    <tr>
+      <th>GUARNE</th>
+      <td>2530.00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">VALLE DEL CAUCA</th>
+      <th>GUADALAJARA DE BUGA</th>
+      <td>2047.18</td>
+    </tr>
+    <tr>
+      <th>JAMUNDI</th>
+      <td>2390.00</td>
+    </tr>
+    <tr>
+      <th>PALMIRA</th>
+      <td>2619.50</td>
+    </tr>
+    <tr>
+      <th>TULUA</th>
+      <td>2609.85</td>
+    </tr>
+    <tr>
+      <th>YUMBO</th>
+      <td>2327.17</td>
+    </tr>
+  </tbody>
+</table>
+<p>74 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2024</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>PRECIO_PROMEDIO_PUBLICADO</th>
+    </tr>
+    <tr>
+      <th>DEPARTAMENTO_EDS</th>
+      <th>MUNICIPIO_EDS</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">ANTIOQUIA</th>
+      <th>APARTADO</th>
+      <td>2591.82</td>
+    </tr>
+    <tr>
+      <th>BARBOSA</th>
+      <td>2662.22</td>
+    </tr>
+    <tr>
+      <th>BELLO</th>
+      <td>2785.92</td>
+    </tr>
+    <tr>
+      <th>ENVIGADO</th>
+      <td>2805.83</td>
+    </tr>
+    <tr>
+      <th>ITAGUI</th>
+      <td>2844.00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">VALLE DEL CAUCA</th>
+      <th>JAMUNDI</th>
+      <td>2885.00</td>
+    </tr>
+    <tr>
+      <th>PALMIRA</th>
+      <td>3029.28</td>
+    </tr>
+    <tr>
+      <th>RIOFRIO</th>
+      <td>2511.00</td>
+    </tr>
+    <tr>
+      <th>TULUA</th>
+      <td>2939.00</td>
+    </tr>
+    <tr>
+      <th>YUMBO</th>
+      <td>2560.22</td>
+    </tr>
+  </tbody>
+</table>
+<p>70 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2025</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>PRECIO_PROMEDIO_PUBLICADO</th>
+    </tr>
+    <tr>
+      <th>DEPARTAMENTO_EDS</th>
+      <th>MUNICIPIO_EDS</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">ANTIOQUIA</th>
+      <th>APARTADO</th>
+      <td>3190.00</td>
+    </tr>
+    <tr>
+      <th>BARBOSA</th>
+      <td>3990.00</td>
+    </tr>
+    <tr>
+      <th>BELLO</th>
+      <td>3706.43</td>
+    </tr>
+    <tr>
+      <th>ENVIGADO</th>
+      <td>3523.33</td>
+    </tr>
+    <tr>
+      <th>ITAGUI</th>
+      <td>3540.00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">VALLE DEL CAUCA</th>
+      <th>LA UNION</th>
+      <td>3300.00</td>
+    </tr>
+    <tr>
+      <th>PALMIRA</th>
+      <td>3529.00</td>
+    </tr>
+    <tr>
+      <th>RIOFRIO</th>
+      <td>2990.00</td>
+    </tr>
+    <tr>
+      <th>TULUA</th>
+      <td>3400.62</td>
+    </tr>
+    <tr>
+      <th>YUMBO</th>
+      <td>2746.00</td>
+    </tr>
+  </tbody>
+</table>
+<p>64 rows × 1 columns</p>
+</div></div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
