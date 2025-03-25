@@ -152,8 +152,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/Logo-UNINORTE.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/Logo-UNINORTE.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -652,6 +652,18 @@ memory usage: 924.8+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TIPO_COMBUSTIBLE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;GNCV&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -844,10 +856,17 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precios2021</span> <span class="o">=</span> <span class="n">df_2021</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2021</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
     <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
 <span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">precios2021</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1146,10 +1165,9 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precios2022</span> <span class="o">=</span> <span class="n">df_2022</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2022</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
     <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
 <span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">precios2022</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1183,7 +1201,7 @@ Name: MUNICIPIO_EDS, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th rowspan="5" valign="top">ANTIOQUIA</th>
+      <th rowspan="8" valign="top">ANTIOQUIA</th>
       <th>APARTADO</th>
       <td>2020.00</td>
     </tr>
@@ -1204,12 +1222,258 @@ Name: MUNICIPIO_EDS, dtype: int64
       <td>2178.77</td>
     </tr>
     <tr>
-      <th>...</th>
-      <th>...</th>
-      <td>...</td>
+      <th>MEDELLIN</th>
+      <td>2107.30</td>
     </tr>
     <tr>
-      <th rowspan="5" valign="top">VALLE DEL CAUCA</th>
+      <th>RIONEGRO</th>
+      <td>2083.36</td>
+    </tr>
+    <tr>
+      <th>SABANETA</th>
+      <td>2049.17</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">ATLANTICO</th>
+      <th>BARRANQUILLA</th>
+      <td>1724.47</td>
+    </tr>
+    <tr>
+      <th>MALAMBO</th>
+      <td>1789.83</td>
+    </tr>
+    <tr>
+      <th>PUERTO COLOMBIA</th>
+      <td>1715.00</td>
+    </tr>
+    <tr>
+      <th>SOLEDAD</th>
+      <td>1721.48</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">BOLIVAR</th>
+      <th>CARTAGENA DE INDIAS</th>
+      <td>1764.23</td>
+    </tr>
+    <tr>
+      <th>TURBACO</th>
+      <td>1759.90</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">BOYACA</th>
+      <th>CHIQUINQUIRA</th>
+      <td>1889.00</td>
+    </tr>
+    <tr>
+      <th>DUITAMA</th>
+      <td>1837.27</td>
+    </tr>
+    <tr>
+      <th>SOGAMOSO</th>
+      <td>1748.00</td>
+    </tr>
+    <tr>
+      <th>TUNJA</th>
+      <td>1832.62</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CALDAS</th>
+      <th>CHINCHINA</th>
+      <td>2386.67</td>
+    </tr>
+    <tr>
+      <th>LA DORADA</th>
+      <td>1813.20</td>
+    </tr>
+    <tr>
+      <th>MANIZALES</th>
+      <td>2203.76</td>
+    </tr>
+    <tr>
+      <th>CAQUETA</th>
+      <th>FLORENCIA</th>
+      <td>2200.00</td>
+    </tr>
+    <tr>
+      <th>CASANARE</th>
+      <th>YOPAL</th>
+      <td>1795.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CAUCA</th>
+      <th>POPAYAN</th>
+      <td>2384.18</td>
+    </tr>
+    <tr>
+      <th>SANTANDER DE QUILICHAO</th>
+      <td>2871.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CESAR</th>
+      <th>BOSCONIA</th>
+      <td>1741.00</td>
+    </tr>
+    <tr>
+      <th>VALLEDUPAR</th>
+      <td>1490.90</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CORDOBA</th>
+      <th>MONTERIA</th>
+      <td>1834.22</td>
+    </tr>
+    <tr>
+      <th>PLANETA RICA</th>
+      <td>1796.75</td>
+    </tr>
+    <tr>
+      <th>SAHAGUN</th>
+      <td>1959.33</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">CUNDINAMARCA</th>
+      <th>CHIA</th>
+      <td>1917.00</td>
+    </tr>
+    <tr>
+      <th>COTA</th>
+      <td>1822.13</td>
+    </tr>
+    <tr>
+      <th>FUNZA</th>
+      <td>1972.33</td>
+    </tr>
+    <tr>
+      <th>FUSAGASUGA</th>
+      <td>1869.00</td>
+    </tr>
+    <tr>
+      <th>GIRARDOT</th>
+      <td>2394.00</td>
+    </tr>
+    <tr>
+      <th>MOSQUERA</th>
+      <td>1976.61</td>
+    </tr>
+    <tr>
+      <th>SOACHA</th>
+      <td>1873.08</td>
+    </tr>
+    <tr>
+      <th>SOPO</th>
+      <td>1967.18</td>
+    </tr>
+    <tr>
+      <th>HUILA</th>
+      <th>NEIVA</th>
+      <td>2218.09</td>
+    </tr>
+    <tr>
+      <th>MAGDALENA</th>
+      <th>SANTA MARTA</th>
+      <td>1794.13</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">META</th>
+      <th>CUMARAL</th>
+      <td>1779.00</td>
+    </tr>
+    <tr>
+      <th>VILLAVICENCIO</th>
+      <td>1865.77</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">QUINDIO</th>
+      <th>ARMENIA</th>
+      <td>2315.16</td>
+    </tr>
+    <tr>
+      <th>CALARCA</th>
+      <td>2298.17</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RISARALDA</th>
+      <th>DOSQUEBRADAS</th>
+      <td>2057.83</td>
+    </tr>
+    <tr>
+      <th>PEREIRA</th>
+      <td>2032.64</td>
+    </tr>
+    <tr>
+      <th>SANTAFE DE BOGOTA D.C</th>
+      <th>BOGOTA, D.C.</th>
+      <td>1832.01</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">SANTANDER</th>
+      <th>BARBOSA</th>
+      <td>1967.04</td>
+    </tr>
+    <tr>
+      <th>BUCARAMANGA</th>
+      <td>2088.75</td>
+    </tr>
+    <tr>
+      <th>FLORIDABLANCA</th>
+      <td>2243.50</td>
+    </tr>
+    <tr>
+      <th>GIRON</th>
+      <td>2117.45</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">SUCRE</th>
+      <th>COROZAL</th>
+      <td>1973.75</td>
+    </tr>
+    <tr>
+      <th>SAN PEDRO</th>
+      <td>1699.00</td>
+    </tr>
+    <tr>
+      <th>SINCELEJO</th>
+      <td>1845.84</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">TOLIMA</th>
+      <th>ARMERO</th>
+      <td>2334.00</td>
+    </tr>
+    <tr>
+      <th>ESPINAL</th>
+      <td>2099.00</td>
+    </tr>
+    <tr>
+      <th>IBAGUE</th>
+      <td>2009.71</td>
+    </tr>
+    <tr>
+      <th rowspan="11" valign="top">VALLE DEL CAUCA</th>
+      <th>BUENAVENTURA</th>
+      <td>2239.43</td>
+    </tr>
+    <tr>
+      <th>CALI</th>
+      <td>2115.39</td>
+    </tr>
+    <tr>
+      <th>CARTAGO</th>
+      <td>2255.50</td>
+    </tr>
+    <tr>
+      <th>FLORIDA</th>
+      <td>2080.00</td>
+    </tr>
+    <tr>
+      <th>GUADALAJARA DE BUGA</th>
+      <td>2068.33</td>
+    </tr>
+    <tr>
+      <th>JAMUNDI</th>
+      <td>2190.00</td>
+    </tr>
+    <tr>
       <th>LA UNION</th>
       <td>2121.43</td>
     </tr>
@@ -1231,7 +1495,6 @@ Name: MUNICIPIO_EDS, dtype: int64
     </tr>
   </tbody>
 </table>
-<p>68 rows × 1 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1272,7 +1535,7 @@ Name: MUNICIPIO_EDS, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th rowspan="5" valign="top">ANTIOQUIA</th>
+      <th rowspan="10" valign="top">ANTIOQUIA</th>
       <th>APARTADO</th>
       <td>2421.82</td>
     </tr>
@@ -1293,12 +1556,281 @@ Name: MUNICIPIO_EDS, dtype: int64
       <td>2530.00</td>
     </tr>
     <tr>
-      <th>...</th>
-      <th>...</th>
-      <td>...</td>
+      <th>ITAGUI</th>
+      <td>2427.86</td>
     </tr>
     <tr>
-      <th rowspan="5" valign="top">VALLE DEL CAUCA</th>
+      <th>LA CEJA</th>
+      <td>2740.82</td>
+    </tr>
+    <tr>
+      <th>MEDELLIN</th>
+      <td>2419.92</td>
+    </tr>
+    <tr>
+      <th>RIONEGRO</th>
+      <td>2486.12</td>
+    </tr>
+    <tr>
+      <th>SABANETA</th>
+      <td>2417.73</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">ATLANTICO</th>
+      <th>BARRANQUILLA</th>
+      <td>2004.35</td>
+    </tr>
+    <tr>
+      <th>MALAMBO</th>
+      <td>2004.64</td>
+    </tr>
+    <tr>
+      <th>PUERTO COLOMBIA</th>
+      <td>2004.20</td>
+    </tr>
+    <tr>
+      <th>SOLEDAD</th>
+      <td>1974.32</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">BOLIVAR</th>
+      <th>CARTAGENA DE INDIAS</th>
+      <td>1978.21</td>
+    </tr>
+    <tr>
+      <th>TURBACO</th>
+      <td>1925.91</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">BOYACA</th>
+      <th>CHIQUINQUIRA</th>
+      <td>2160.67</td>
+    </tr>
+    <tr>
+      <th>DUITAMA</th>
+      <td>2082.44</td>
+    </tr>
+    <tr>
+      <th>SOGAMOSO</th>
+      <td>1992.27</td>
+    </tr>
+    <tr>
+      <th>TUNJA</th>
+      <td>2083.41</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CALDAS</th>
+      <th>CHINCHINA</th>
+      <td>2590.00</td>
+    </tr>
+    <tr>
+      <th>LA DORADA</th>
+      <td>2260.00</td>
+    </tr>
+    <tr>
+      <th>MANIZALES</th>
+      <td>2554.83</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CASANARE</th>
+      <th>AGUAZUL</th>
+      <td>2199.00</td>
+    </tr>
+    <tr>
+      <th>YOPAL</th>
+      <td>2012.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CAUCA</th>
+      <th>POPAYAN</th>
+      <td>2730.33</td>
+    </tr>
+    <tr>
+      <th>SANTANDER DE QUILICHAO</th>
+      <td>3009.18</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CESAR</th>
+      <th>BOSCONIA</th>
+      <td>2013.89</td>
+    </tr>
+    <tr>
+      <th>PAILITAS</th>
+      <td>2026.33</td>
+    </tr>
+    <tr>
+      <th>VALLEDUPAR</th>
+      <td>1927.56</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CORDOBA</th>
+      <th>MONTERIA</th>
+      <td>2121.35</td>
+    </tr>
+    <tr>
+      <th>PLANETA RICA</th>
+      <td>2141.00</td>
+    </tr>
+    <tr>
+      <th>SAHAGUN</th>
+      <td>2143.67</td>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">CUNDINAMARCA</th>
+      <th>CHIA</th>
+      <td>2145.11</td>
+    </tr>
+    <tr>
+      <th>COTA</th>
+      <td>1956.55</td>
+    </tr>
+    <tr>
+      <th>FACATATIVA</th>
+      <td>2143.33</td>
+    </tr>
+    <tr>
+      <th>FUNZA</th>
+      <td>2134.71</td>
+    </tr>
+    <tr>
+      <th>FUSAGASUGA</th>
+      <td>2299.00</td>
+    </tr>
+    <tr>
+      <th>LA MESA</th>
+      <td>2125.67</td>
+    </tr>
+    <tr>
+      <th>MOSQUERA</th>
+      <td>2175.86</td>
+    </tr>
+    <tr>
+      <th>SOACHA</th>
+      <td>2058.64</td>
+    </tr>
+    <tr>
+      <th>SOPO</th>
+      <td>2219.00</td>
+    </tr>
+    <tr>
+      <th>HUILA</th>
+      <th>NEIVA</th>
+      <td>2479.80</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">MAGDALENA</th>
+      <th>CIENAGA</th>
+      <td>2077.60</td>
+    </tr>
+    <tr>
+      <th>SANTA MARTA</th>
+      <td>2050.92</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">META</th>
+      <th>CUMARAL</th>
+      <td>2099.00</td>
+    </tr>
+    <tr>
+      <th>VILLAVICENCIO</th>
+      <td>2281.97</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">QUINDIO</th>
+      <th>ARMENIA</th>
+      <td>2703.12</td>
+    </tr>
+    <tr>
+      <th>CALARCA</th>
+      <td>2593.58</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RISARALDA</th>
+      <th>DOSQUEBRADAS</th>
+      <td>2216.21</td>
+    </tr>
+    <tr>
+      <th>PEREIRA</th>
+      <td>2232.29</td>
+    </tr>
+    <tr>
+      <th>SANTAFE DE BOGOTA D.C</th>
+      <th>BOGOTA, D.C.</th>
+      <td>2016.52</td>
+    </tr>
+    <tr>
+      <th rowspan="7" valign="top">SANTANDER</th>
+      <th>BARBOSA</th>
+      <td>1980.67</td>
+    </tr>
+    <tr>
+      <th>BARRANCABERMEJA</th>
+      <td>2199.00</td>
+    </tr>
+    <tr>
+      <th>BUCARAMANGA</th>
+      <td>2153.05</td>
+    </tr>
+    <tr>
+      <th>FLORIDABLANCA</th>
+      <td>2305.57</td>
+    </tr>
+    <tr>
+      <th>GIRON</th>
+      <td>2345.22</td>
+    </tr>
+    <tr>
+      <th>LEBRIJA</th>
+      <td>2149.00</td>
+    </tr>
+    <tr>
+      <th>PIEDECUESTA</th>
+      <td>2249.00</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">SUCRE</th>
+      <th>COROZAL</th>
+      <td>2121.00</td>
+    </tr>
+    <tr>
+      <th>SAN PEDRO</th>
+      <td>1965.67</td>
+    </tr>
+    <tr>
+      <th>SINCELEJO</th>
+      <td>2200.23</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">TOLIMA</th>
+      <th>ARMERO</th>
+      <td>2489.33</td>
+    </tr>
+    <tr>
+      <th>ESPINAL</th>
+      <td>2691.00</td>
+    </tr>
+    <tr>
+      <th>IBAGUE</th>
+      <td>2278.28</td>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">VALLE DEL CAUCA</th>
+      <th>BUENAVENTURA</th>
+      <td>2585.18</td>
+    </tr>
+    <tr>
+      <th>CALI</th>
+      <td>2590.39</td>
+    </tr>
+    <tr>
+      <th>CARTAGO</th>
+      <td>2494.29</td>
+    </tr>
+    <tr>
+      <th>FLORIDA</th>
+      <td>5885.00</td>
+    </tr>
+    <tr>
       <th>GUADALAJARA DE BUGA</th>
       <td>2047.18</td>
     </tr>
@@ -1320,7 +1852,6 @@ Name: MUNICIPIO_EDS, dtype: int64
     </tr>
   </tbody>
 </table>
-<p>74 rows × 1 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1361,7 +1892,7 @@ Name: MUNICIPIO_EDS, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th rowspan="5" valign="top">ANTIOQUIA</th>
+      <th rowspan="9" valign="top">ANTIOQUIA</th>
       <th>APARTADO</th>
       <td>2591.82</td>
     </tr>
@@ -1382,12 +1913,265 @@ Name: MUNICIPIO_EDS, dtype: int64
       <td>2844.00</td>
     </tr>
     <tr>
-      <th>...</th>
-      <th>...</th>
-      <td>...</td>
+      <th>LA CEJA</th>
+      <td>2945.67</td>
     </tr>
     <tr>
-      <th rowspan="5" valign="top">VALLE DEL CAUCA</th>
+      <th>MEDELLIN</th>
+      <td>2805.71</td>
+    </tr>
+    <tr>
+      <th>RIONEGRO</th>
+      <td>2704.42</td>
+    </tr>
+    <tr>
+      <th>SABANETA</th>
+      <td>2649.55</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">ATLANTICO</th>
+      <th>BARRANQUILLA</th>
+      <td>2453.48</td>
+    </tr>
+    <tr>
+      <th>MALAMBO</th>
+      <td>2269.08</td>
+    </tr>
+    <tr>
+      <th>PUERTO COLOMBIA</th>
+      <td>2485.83</td>
+    </tr>
+    <tr>
+      <th>SOLEDAD</th>
+      <td>2142.05</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">BOLIVAR</th>
+      <th>CARTAGENA DE INDIAS</th>
+      <td>2296.71</td>
+    </tr>
+    <tr>
+      <th>TURBACO</th>
+      <td>2359.00</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">BOYACA</th>
+      <th>CHIQUINQUIRA</th>
+      <td>2498.15</td>
+    </tr>
+    <tr>
+      <th>DUITAMA</th>
+      <td>2249.89</td>
+    </tr>
+    <tr>
+      <th>SOGAMOSO</th>
+      <td>2227.83</td>
+    </tr>
+    <tr>
+      <th>SOTAQUIRA</th>
+      <td>2499.00</td>
+    </tr>
+    <tr>
+      <th>TUNJA</th>
+      <td>2297.89</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CALDAS</th>
+      <th>LA DORADA</th>
+      <td>2715.33</td>
+    </tr>
+    <tr>
+      <th>MANIZALES</th>
+      <td>2920.93</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CASANARE</th>
+      <th>AGUAZUL</th>
+      <td>2299.00</td>
+    </tr>
+    <tr>
+      <th>YOPAL</th>
+      <td>2107.47</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CAUCA</th>
+      <th>POPAYAN</th>
+      <td>3383.40</td>
+    </tr>
+    <tr>
+      <th>SANTANDER DE QUILICHAO</th>
+      <td>3141.00</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CESAR</th>
+      <th>BOSCONIA</th>
+      <td>2476.13</td>
+    </tr>
+    <tr>
+      <th>PAILITAS</th>
+      <td>2404.00</td>
+    </tr>
+    <tr>
+      <th>VALLEDUPAR</th>
+      <td>2453.00</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CORDOBA</th>
+      <th>MONTERIA</th>
+      <td>2597.00</td>
+    </tr>
+    <tr>
+      <th>PLANETA RICA</th>
+      <td>2608.92</td>
+    </tr>
+    <tr>
+      <th>SAHAGUN</th>
+      <td>2370.00</td>
+    </tr>
+    <tr>
+      <th rowspan="8" valign="top">CUNDINAMARCA</th>
+      <th>CHIA</th>
+      <td>2371.23</td>
+    </tr>
+    <tr>
+      <th>COTA</th>
+      <td>1999.65</td>
+    </tr>
+    <tr>
+      <th>FACATATIVA</th>
+      <td>3120.00</td>
+    </tr>
+    <tr>
+      <th>FUNZA</th>
+      <td>2241.00</td>
+    </tr>
+    <tr>
+      <th>MADRID</th>
+      <td>2299.00</td>
+    </tr>
+    <tr>
+      <th>MOSQUERA</th>
+      <td>2393.97</td>
+    </tr>
+    <tr>
+      <th>SOACHA</th>
+      <td>2302.00</td>
+    </tr>
+    <tr>
+      <th>SOPO</th>
+      <td>2344.00</td>
+    </tr>
+    <tr>
+      <th>HUILA</th>
+      <th>NEIVA</th>
+      <td>2906.91</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">MAGDALENA</th>
+      <th>CIENAGA</th>
+      <td>2416.50</td>
+    </tr>
+    <tr>
+      <th>SANTA MARTA</th>
+      <td>2526.58</td>
+    </tr>
+    <tr>
+      <th>SITIONUEVO</th>
+      <td>1976.67</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">META</th>
+      <th>CUMARAL</th>
+      <td>2355.00</td>
+    </tr>
+    <tr>
+      <th>VILLAVICENCIO</th>
+      <td>2833.45</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">QUINDIO</th>
+      <th>ARMENIA</th>
+      <td>2983.11</td>
+    </tr>
+    <tr>
+      <th>CALARCA</th>
+      <td>2824.67</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RISARALDA</th>
+      <th>DOSQUEBRADAS</th>
+      <td>2488.00</td>
+    </tr>
+    <tr>
+      <th>PEREIRA</th>
+      <td>2594.94</td>
+    </tr>
+    <tr>
+      <th>SANTAFE DE BOGOTA D.C</th>
+      <th>BOGOTA, D.C.</th>
+      <td>2216.99</td>
+    </tr>
+    <tr>
+      <th rowspan="7" valign="top">SANTANDER</th>
+      <th>BARBOSA</th>
+      <td>2325.96</td>
+    </tr>
+    <tr>
+      <th>BARRANCABERMEJA</th>
+      <td>2459.00</td>
+    </tr>
+    <tr>
+      <th>BUCARAMANGA</th>
+      <td>2468.42</td>
+    </tr>
+    <tr>
+      <th>FLORIDABLANCA</th>
+      <td>2365.12</td>
+    </tr>
+    <tr>
+      <th>GIRON</th>
+      <td>2572.00</td>
+    </tr>
+    <tr>
+      <th>LEBRIJA</th>
+      <td>2199.00</td>
+    </tr>
+    <tr>
+      <th>PIEDECUESTA</th>
+      <td>2699.33</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SUCRE</th>
+      <th>COROZAL</th>
+      <td>2610.71</td>
+    </tr>
+    <tr>
+      <th>SINCELEJO</th>
+      <td>2518.41</td>
+    </tr>
+    <tr>
+      <th>TOLIMA</th>
+      <th>IBAGUE</th>
+      <td>2534.97</td>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">VALLE DEL CAUCA</th>
+      <th>BUENAVENTURA</th>
+      <td>2840.33</td>
+    </tr>
+    <tr>
+      <th>CALI</th>
+      <td>2884.50</td>
+    </tr>
+    <tr>
+      <th>CARTAGO</th>
+      <td>2695.64</td>
+    </tr>
+    <tr>
+      <th>GUADALAJARA DE BUGA</th>
+      <td>1776.83</td>
+    </tr>
+    <tr>
       <th>JAMUNDI</th>
       <td>2885.00</td>
     </tr>
@@ -1409,7 +2193,6 @@ Name: MUNICIPIO_EDS, dtype: int64
     </tr>
   </tbody>
 </table>
-<p>70 rows × 1 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1450,7 +2233,7 @@ Name: MUNICIPIO_EDS, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th rowspan="5" valign="top">ANTIOQUIA</th>
+      <th rowspan="7" valign="top">ANTIOQUIA</th>
       <th>APARTADO</th>
       <td>3190.00</td>
     </tr>
@@ -1471,12 +2254,242 @@ Name: MUNICIPIO_EDS, dtype: int64
       <td>3540.00</td>
     </tr>
     <tr>
-      <th>...</th>
-      <th>...</th>
-      <td>...</td>
+      <th>MEDELLIN</th>
+      <td>3696.31</td>
     </tr>
     <tr>
-      <th rowspan="5" valign="top">VALLE DEL CAUCA</th>
+      <th>SABANETA</th>
+      <td>3990.00</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">ATLANTICO</th>
+      <th>BARRANQUILLA</th>
+      <td>2898.45</td>
+    </tr>
+    <tr>
+      <th>MALAMBO</th>
+      <td>2744.67</td>
+    </tr>
+    <tr>
+      <th>PUERTO COLOMBIA</th>
+      <td>2988.67</td>
+    </tr>
+    <tr>
+      <th>SOLEDAD</th>
+      <td>2572.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">BOLIVAR</th>
+      <th>CARTAGENA DE INDIAS</th>
+      <td>2871.71</td>
+    </tr>
+    <tr>
+      <th>TURBACO</th>
+      <td>2827.00</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">BOYACA</th>
+      <th>CHIQUINQUIRA</th>
+      <td>2674.25</td>
+    </tr>
+    <tr>
+      <th>DUITAMA</th>
+      <td>2359.25</td>
+    </tr>
+    <tr>
+      <th>SOGAMOSO</th>
+      <td>2499.00</td>
+    </tr>
+    <tr>
+      <th>SOTAQUIRA</th>
+      <td>2399.00</td>
+    </tr>
+    <tr>
+      <th>TUNJA</th>
+      <td>2567.25</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">CALDAS</th>
+      <th>LA DORADA</th>
+      <td>3149.00</td>
+    </tr>
+    <tr>
+      <th>MANIZALES</th>
+      <td>3734.11</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CASANARE</th>
+      <th>AGUAZUL</th>
+      <td>3099.00</td>
+    </tr>
+    <tr>
+      <th>PAZ DE ARIPORO</th>
+      <td>2313.00</td>
+    </tr>
+    <tr>
+      <th>YOPAL</th>
+      <td>2369.00</td>
+    </tr>
+    <tr>
+      <th>CAUCA</th>
+      <th>POPAYAN</th>
+      <td>3682.00</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">CESAR</th>
+      <th>AGUACHICA</th>
+      <td>2619.00</td>
+    </tr>
+    <tr>
+      <th>BOSCONIA</th>
+      <td>2904.67</td>
+    </tr>
+    <tr>
+      <th>PAILITAS</th>
+      <td>2459.00</td>
+    </tr>
+    <tr>
+      <th>VALLEDUPAR</th>
+      <td>2840.00</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">CORDOBA</th>
+      <th>MONTERIA</th>
+      <td>2684.33</td>
+    </tr>
+    <tr>
+      <th>PLANETA RICA</th>
+      <td>2998.67</td>
+    </tr>
+    <tr>
+      <th>SAHAGUN</th>
+      <td>2910.00</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">CUNDINAMARCA</th>
+      <th>CHIA</th>
+      <td>2514.17</td>
+    </tr>
+    <tr>
+      <th>COTA</th>
+      <td>2234.33</td>
+    </tr>
+    <tr>
+      <th>FUNZA</th>
+      <td>2519.00</td>
+    </tr>
+    <tr>
+      <th>MOSQUERA</th>
+      <td>2521.89</td>
+    </tr>
+    <tr>
+      <th>SOACHA</th>
+      <td>2439.86</td>
+    </tr>
+    <tr>
+      <th>SOPO</th>
+      <td>2499.00</td>
+    </tr>
+    <tr>
+      <th>HUILA</th>
+      <th>NEIVA</th>
+      <td>3300.00</td>
+    </tr>
+    <tr>
+      <th>LA GUAJIRA</th>
+      <th>RIOHACHA</th>
+      <td>2280.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">MAGDALENA</th>
+      <th>CIENAGA</th>
+      <td>2913.50</td>
+    </tr>
+    <tr>
+      <th>SANTA MARTA</th>
+      <td>2997.00</td>
+    </tr>
+    <tr>
+      <th>META</th>
+      <th>VILLAVICENCIO</th>
+      <td>3563.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">QUINDIO</th>
+      <th>ARMENIA</th>
+      <td>3758.80</td>
+    </tr>
+    <tr>
+      <th>CALARCA</th>
+      <td>3599.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RISARALDA</th>
+      <th>DOSQUEBRADAS</th>
+      <td>3532.00</td>
+    </tr>
+    <tr>
+      <th>PEREIRA</th>
+      <td>3477.53</td>
+    </tr>
+    <tr>
+      <th>SANTAFE DE BOGOTA D.C</th>
+      <th>BOGOTA, D.C.</th>
+      <td>2437.89</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">SANTANDER</th>
+      <th>BARBOSA</th>
+      <td>2345.00</td>
+    </tr>
+    <tr>
+      <th>BUCARAMANGA</th>
+      <td>2807.00</td>
+    </tr>
+    <tr>
+      <th>FLORIDABLANCA</th>
+      <td>2999.00</td>
+    </tr>
+    <tr>
+      <th>GIRON</th>
+      <td>2849.00</td>
+    </tr>
+    <tr>
+      <th>PIEDECUESTA</th>
+      <td>3400.00</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SUCRE</th>
+      <th>COROZAL</th>
+      <td>2879.00</td>
+    </tr>
+    <tr>
+      <th>SINCELEJO</th>
+      <td>2658.50</td>
+    </tr>
+    <tr>
+      <th>TOLIMA</th>
+      <th>IBAGUE</th>
+      <td>3049.00</td>
+    </tr>
+    <tr>
+      <th rowspan="9" valign="top">VALLE DEL CAUCA</th>
+      <th>CALI</th>
+      <td>3195.49</td>
+    </tr>
+    <tr>
+      <th>CARTAGO</th>
+      <td>3165.67</td>
+    </tr>
+    <tr>
+      <th>GUADALAJARA DE BUGA</th>
+      <td>2769.00</td>
+    </tr>
+    <tr>
+      <th>JAMUNDI</th>
+      <td>3350.00</td>
+    </tr>
+    <tr>
       <th>LA UNION</th>
       <td>3300.00</td>
     </tr>
@@ -1498,49 +2511,55 @@ Name: MUNICIPIO_EDS, dtype: int64
     </tr>
   </tbody>
 </table>
-<p>64 rows × 1 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cargar el GeoJSON con los departamentos de Colombia</span>
-<span class="n">geojson_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/Colombia.geo.json&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geojson_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/Colombia.geo.json&#39;</span>
 <span class="n">colombia_geo</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">geojson_url</span><span class="p">)</span>
 <span class="n">colombia_geo</span><span class="p">[</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">colombia_geo</span><span class="p">[</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">graficar_precios_por_departamento</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
-    <span class="c1"># Crear una copia y asegurar nombres de departamentos en mayúsculas</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-    
-    <span class="c1"># Calcular el promedio por departamento</span>
-    <span class="n">precios</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
-        <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
-    <span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-    <span class="c1"># Unir con el GeoDataFrame</span>
-    <span class="n">merged</span> <span class="o">=</span> <span class="n">colombia_geo</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">precios</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+    <span class="n">precios_mapa</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">)[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="n">colombia_geo</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">precios_mapa</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
     <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="c1"># Plotear el mapa</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-    <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;viridis&#39;</span> 
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
+    <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;viridis&#39;</span>
     <span class="n">merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">,</span>
                  <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
                  <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
                  <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;0.8&#39;</span><span class="p">,</span>
                  <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                 <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+                 <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Precios Promedio Publicado por Departamento en </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Precios Promedio GAS (GNCV) Publicado por Departamento en </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Agregar nombres de los departamentos</span>
     <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">merged</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]):</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>
-                         <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+            <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">],</span> 
+                             <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>
+                             <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">])</span>
+    <span class="n">precios_tiempo</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">,</span> <span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">])[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="n">top_10_departamentos</span> <span class="o">=</span> <span class="n">precios_mapa</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">)[</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">depto</span> <span class="ow">in</span> <span class="n">top_10_departamentos</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">precios_tiempo</span><span class="p">[</span><span class="n">precios_tiempo</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">depto</span><span class="p">]</span>
+        <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">depto</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Evolución del Precio Promedio del GAS (GNCV) por Departamento (</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">) - Top 10&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Precio Promedio Publicado&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1555,7 +2574,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/136d320d0ccd5ad2684b665fb4eda3d286c89b51844f3689773f40c6291d5d3b.png" src="_images/136d320d0ccd5ad2684b665fb4eda3d286c89b51844f3689773f40c6291d5d3b.png" />
+<img alt="_images/c88e2b7fbf4ca8fbee1bc9e3f56c74335757b0d2037ae67cff6297a02939c967.png" src="_images/c88e2b7fbf4ca8fbee1bc9e3f56c74335757b0d2037ae67cff6297a02939c967.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1565,7 +2584,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bead15cb1dde895116ce91ffc273ebb2ae9d34ca3b2be3d6d41a975ad83cb138.png" src="_images/bead15cb1dde895116ce91ffc273ebb2ae9d34ca3b2be3d6d41a975ad83cb138.png" />
+<img alt="_images/1874c92e62a083836c6594fb524833281b6bcca7bf812803305f3d5ce3ad275d.png" src="_images/1874c92e62a083836c6594fb524833281b6bcca7bf812803305f3d5ce3ad275d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1575,7 +2594,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c2c8fa7ccbd4cfe73a31f54c25b4a0ada462e4f11957c76ddcdfbc0762230a54.png" src="_images/c2c8fa7ccbd4cfe73a31f54c25b4a0ada462e4f11957c76ddcdfbc0762230a54.png" />
+<img alt="_images/6873bf09528e739e4a2cab51ac0a9bd4f6e499ebda81b70c770e591d20496c11.png" src="_images/6873bf09528e739e4a2cab51ac0a9bd4f6e499ebda81b70c770e591d20496c11.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1585,7 +2604,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/88d0ad29b2b8d36825b369562b95f23b380b50dcf02b0cad2253660d273f8d36.png" src="_images/88d0ad29b2b8d36825b369562b95f23b380b50dcf02b0cad2253660d273f8d36.png" />
+<img alt="_images/5a3f6da762934044d409c35beb7a585e375351e84a73a1fba344f5ac92acc9f6.png" src="_images/5a3f6da762934044d409c35beb7a585e375351e84a73a1fba344f5ac92acc9f6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1595,7 +2614,63 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5a13dc902b0fbec2146af5b87d425187087e53df9f585a1f98b6f0d9da0f386d.png" src="_images/5a13dc902b0fbec2146af5b87d425187087e53df9f585a1f98b6f0d9da0f386d.png" />
+<img alt="_images/8ecd6af6c58af56d9051e4b07ae9ccca62b41f82c0781034f3d485d5be6b4652.png" src="_images/8ecd6af6c58af56d9051e4b07ae9ccca62b41f82c0781034f3d485d5be6b4652.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">graficar_precio_promedio_por_departamento</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">departamento</span><span class="p">):</span>
+    <span class="c1"># Filtrar por departamento</span>
+    <span class="n">df_filtrado</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="n">departamento</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="c1"># Agrupar por fecha y municipio</span>
+    <span class="n">df_filtrado</span> <span class="o">=</span> <span class="n">df_filtrado</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="c1"># Graficar</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">municipio</span> <span class="ow">in</span> <span class="n">df_filtrado</span><span class="p">[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">df_filtrado</span><span class="p">[</span><span class="n">df_filtrado</span><span class="p">[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">municipio</span><span class="p">]</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FECHA_PRECIO&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">municipio</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Evolución del Precio Promedio en Municipios de </span><span class="si">{</span><span class="n">departamento</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s1"> (2021-2025)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Precio Promedio Publicado&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_precio_promedio_por_departamento</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;ANTIOQUIA&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1d0a62a567f5b3760f1026fe12a1cb3ed91f98185adf9c91c442adf57d3207e9.png" src="_images/1d0a62a567f5b3760f1026fe12a1cb3ed91f98185adf9c91c442adf57d3207e9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_precio_promedio_por_departamento</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;ATLANTICO&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b93e69962e7feaaa7ae93919a4adae88827b3611c586ad75b310b139bec35cf4.png" src="_images/b93e69962e7feaaa7ae93919a4adae88827b3611c586ad75b310b139bec35cf4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graficar_precio_promedio_por_departamento</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;VALLE DEL CAUCA&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/285968cdf1dac1ea5099c4d291b5ab3fb71117869d252a4ce0749088538ea1c3.png" src="_images/285968cdf1dac1ea5099c4d291b5ab3fb71117869d252a4ce0749088538ea1c3.png" />
 </div>
 </div>
 
