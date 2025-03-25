@@ -1520,22 +1520,44 @@ Name: MUNICIPIO_EDS, dtype: int64
     <span class="n">merged</span> <span class="o">=</span> <span class="n">colombia_geo</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">precios</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
     <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="c1"># Crear el mapa coroplético</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span>
-        <span class="n">merged</span><span class="p">,</span>
-        <span class="n">geojson</span><span class="o">=</span><span class="n">merged</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span>
-        <span class="n">locations</span><span class="o">=</span><span class="n">merged</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">,</span>
-        <span class="n">hover_name</span><span class="o">=</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">,</span>
-        <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Viridis&#39;</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Precios Promedio Publicado por Departamento en </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span>
-    <span class="p">)</span>
+    <span class="c1"># Plotear el mapa</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;viridis&#39;</span>  <span class="c1"># Puedes cambiarlo por &#39;YlOrRd&#39;, &#39;Blues&#39;, &#39;RdBu&#39;, etc.</span>
 
-    <span class="n">fig</span><span class="o">.</span><span class="n">update_geos</span><span class="p">(</span><span class="n">fitbounds</span><span class="o">=</span><span class="s2">&quot;locations&quot;</span><span class="p">,</span> <span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;r&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">merged</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">,</span>
+                 <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+                 <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+                 <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;0.8&#39;</span><span class="p">,</span>
+                 <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Precios Promedio Publicado por Departamento en </span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Agregar nombres de los departamentos</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">merged</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]):</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;NOMBRE_DPT&#39;</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span><span class="o">.</span><span class="n">y</span><span class="p">),</span>
+                         <span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Generar gráficos para cada año</span>
+<span class="n">graficar_precios_por_departamento</span><span class="p">(</span><span class="n">df_2021</span><span class="p">,</span> <span class="mi">2021</span><span class="p">)</span>
+<span class="n">graficar_precios_por_departamento</span><span class="p">(</span><span class="n">df_2022</span><span class="p">,</span> <span class="mi">2022</span><span class="p">)</span>
+<span class="n">graficar_precios_por_departamento</span><span class="p">(</span><span class="n">df_2023</span><span class="p">,</span> <span class="mi">2023</span><span class="p">)</span>
+<span class="n">graficar_precios_por_departamento</span><span class="p">(</span><span class="n">df_2024</span><span class="p">,</span> <span class="mi">2024</span><span class="p">)</span>
+<span class="n">graficar_precios_por_departamento</span><span class="p">(</span><span class="n">df_2025</span><span class="p">,</span> <span class="mi">2025</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/136d320d0ccd5ad2684b665fb4eda3d286c89b51844f3689773f40c6291d5d3b.png" src="_images/136d320d0ccd5ad2684b665fb4eda3d286c89b51844f3689773f40c6291d5d3b.png" />
+<img alt="_images/bead15cb1dde895116ce91ffc273ebb2ae9d34ca3b2be3d6d41a975ad83cb138.png" src="_images/bead15cb1dde895116ce91ffc273ebb2ae9d34ca3b2be3d6d41a975ad83cb138.png" />
+<img alt="_images/c2c8fa7ccbd4cfe73a31f54c25b4a0ada462e4f11957c76ddcdfbc0762230a54.png" src="_images/c2c8fa7ccbd4cfe73a31f54c25b4a0ada462e4f11957c76ddcdfbc0762230a54.png" />
+<img alt="_images/88d0ad29b2b8d36825b369562b95f23b380b50dcf02b0cad2253660d273f8d36.png" src="_images/88d0ad29b2b8d36825b369562b95f23b380b50dcf02b0cad2253660d273f8d36.png" />
+<img alt="_images/5a13dc902b0fbec2146af5b87d425187087e53df9f585a1f98b6f0d9da0f386d.png" src="_images/5a13dc902b0fbec2146af5b87d425187087e53df9f585a1f98b6f0d9da0f386d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1545,6 +1567,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/136d320d0ccd5ad2684b665fb4eda3d286c89b51844f3689773f40c6291d5d3b.png" src="_images/136d320d0ccd5ad2684b665fb4eda3d286c89b51844f3689773f40c6291d5d3b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1554,6 +1577,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/bead15cb1dde895116ce91ffc273ebb2ae9d34ca3b2be3d6d41a975ad83cb138.png" src="_images/bead15cb1dde895116ce91ffc273ebb2ae9d34ca3b2be3d6d41a975ad83cb138.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1563,6 +1587,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/c2c8fa7ccbd4cfe73a31f54c25b4a0ada462e4f11957c76ddcdfbc0762230a54.png" src="_images/c2c8fa7ccbd4cfe73a31f54c25b4a0ada462e4f11957c76ddcdfbc0762230a54.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1572,6 +1597,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/88d0ad29b2b8d36825b369562b95f23b380b50dcf02b0cad2253660d273f8d36.png" src="_images/88d0ad29b2b8d36825b369562b95f23b380b50dcf02b0cad2253660d273f8d36.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1581,6 +1607,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
+<img alt="_images/5a13dc902b0fbec2146af5b87d425187087e53df9f585a1f98b6f0d9da0f386d.png" src="_images/5a13dc902b0fbec2146af5b87d425187087e53df9f585a1f98b6f0d9da0f386d.png" />
 </div>
 </div>
 
