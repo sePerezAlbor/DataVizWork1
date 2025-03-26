@@ -147,8 +147,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/uninorte.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/uninorte.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
-    <p class="title logo__title">My sample book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -372,7 +378,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sebastian-alfonso-perez-albor">Sebastián Alfonso Pérez Albor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Líbrerias y modulos necesarios</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-de-datos"><strong>Conjunto de datos</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-general-del-conjunto-de-datos"><strong>Análisis general del conjunto de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-general-del-conjunto-de-datos"><strong>Análisis general del conjunto de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-varibles-innecesarias"><strong>Eliminación de Varibles innecesarias</strong></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -661,6 +670,7 @@ memory usage: 924.8+ KB
 </div>
 </div>
 </div>
+<p>Como se puede observar ninguna variable presenta datos faltantes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;TIPO_COMBUSTIBLE&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -701,6 +711,7 @@ memory usage: 924.8+ KB
 </div>
 </div>
 </div>
+<p>El dataset solo contiene información de 22 de los 33 departamentos de Colombia.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -726,6 +737,18 @@ memory usage: 924.8+ KB
        &#39;FUSAGASUGA&#39;, &#39;SAN PEDRO&#39;, &#39;ROLDANILLO&#39;, &#39;CHINCHINA&#39;, &#39;SITIONUEVO&#39;,
        &#39;MAGANGUE&#39;, &#39;FLORIDA&#39;, &#39;RIOFRIO&#39;, &#39;MADRID&#39;, &#39;AGUACHICA&#39;,
        &#39;PAZ DE ARIPORO&#39;, &#39;RIOHACHA&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>86
 </pre></div>
 </div>
 </div>
@@ -767,63 +790,40 @@ Name: MUNICIPIO_EDS, dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">)[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">)[</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEPARTAMENTO_EDS
-ANTIOQUIA                10
-ATLANTICO                 4
-BOLIVAR                   3
-BOYACA                    5
-CALDAS                    3
-CAQUETA                   1
-CASANARE                  3
-CAUCA                     2
-CESAR                     4
-CORDOBA                   3
+VALLE DEL CAUCA          12
 CUNDINAMARCA             11
-HUILA                     1
-LA GUAJIRA                1
+ANTIOQUIA                10
+SANTANDER                 7
+BOYACA                    5
+TOLIMA                    4
+CESAR                     4
+ATLANTICO                 4
+CASANARE                  3
+CORDOBA                   3
+BOLIVAR                   3
+CALDAS                    3
 MAGDALENA                 3
+SUCRE                     3
+CAUCA                     2
 META                      2
 QUINDIO                   2
 RISARALDA                 2
+LA GUAJIRA                1
 SANTAFE DE BOGOTA D.C     1
-SANTANDER                 7
-SUCRE                     3
-TOLIMA                    4
-VALLE DEL CAUCA          12
+CAQUETA                   1
+HUILA                     1
 Name: MUNICIPIO_EDS, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ANIO_PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;2021&#39;, &#39;2022&#39;, &#39;2023&#39;, &#39;2024&#39;, &#39;2025&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;MES_PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;01&#39;, &#39;02&#39;, &#39;03&#39;, &#39;04&#39;, &#39;05&#39;, &#39;06&#39;, &#39;07&#39;, &#39;08&#39;, &#39;09&#39;, &#39;10&#39;, &#39;11&#39;, &#39;12&#39;]
-</pre></div>
-</div>
-</div>
-</div>
+<p>El dataset contiene información sobre 86 municipios de Colombia, de los cuales 12 pertenecen al departamento del Valle del Cauca como lo son: CALI, PALMIRA, TULUA, YUMBO, JAMUNDI, etc. 11 de Cundinamarca: CHIA, MOSQUERA, COTA, SOACHA, etc. En el departamento de Antioquia encontramos 10 departamentos y en el Atlántico 4 que son: BARRANQUILLA, MALAMBO, PUERTO COLOMBIA, SOLEDAD.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DIA_PRECIO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -832,6 +832,18 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;01&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="eliminacion-de-varibles-innecesarias">
+<h3><strong>Eliminación de Varibles innecesarias</strong><a class="headerlink" href="#eliminacion-de-varibles-innecesarias" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DIA_PRECIO &#39;</span><span class="p">,</span> <span class="s1">&#39; NOMBRE_COMERCIAL_EDS&#39;</span><span class="p">,</span> 
+                        <span class="s1">&#39;TIPO_COMBUSTIBLE&#39;</span><span class="p">,</span> <span class="s1">&#39;CODIGO_MUNICIPIO_DANE&#39;</span><span class="p">,</span>
+                          <span class="s1">&#39;LATITUD_MUNICIPIO&#39;</span><span class="p">,</span> <span class="s1">&#39;LONGITUD_MUNICIPIO&#39;</span> <span class="p">]</span>
+            <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -875,9 +887,16 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2021</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">df_2021</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
     <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
 <span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Obtener el índice del máximo valor y el valor máximo</span>
+<span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+<span class="n">resultado</span>
 </pre></div>
 </div>
 </div>
@@ -1176,9 +1195,37 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2022</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Departamento: </span><span class="si">{</span><span class="n">departamento_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Municipio: </span><span class="si">{</span><span class="n">municipio_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Precio Promedio Máximo: </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Departamento: QUINDIO
+Municipio: ARMENIA
+Precio Promedio Máximo: 2074.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">df_2022</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
     <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
 <span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Obtener el índice del máximo valor y el valor máximo</span>
+<span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+<span class="n">resultado</span>
 </pre></div>
 </div>
 </div>
@@ -1510,1356 +1557,132 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2023</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
-    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
-<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Departamento: </span><span class="si">{</span><span class="n">departamento_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Municipio: </span><span class="si">{</span><span class="n">municipio_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Precio Promedio Máximo: </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>PRECIO_PROMEDIO_PUBLICADO</th>
-    </tr>
-    <tr>
-      <th>DEPARTAMENTO_EDS</th>
-      <th>MUNICIPIO_EDS</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="10" valign="top">ANTIOQUIA</th>
-      <th>APARTADO</th>
-      <td>2421.82</td>
-    </tr>
-    <tr>
-      <th>BARBOSA</th>
-      <td>2413.33</td>
-    </tr>
-    <tr>
-      <th>BELLO</th>
-      <td>2421.92</td>
-    </tr>
-    <tr>
-      <th>ENVIGADO</th>
-      <td>2418.50</td>
-    </tr>
-    <tr>
-      <th>GUARNE</th>
-      <td>2530.00</td>
-    </tr>
-    <tr>
-      <th>ITAGUI</th>
-      <td>2427.86</td>
-    </tr>
-    <tr>
-      <th>LA CEJA</th>
-      <td>2740.82</td>
-    </tr>
-    <tr>
-      <th>MEDELLIN</th>
-      <td>2419.92</td>
-    </tr>
-    <tr>
-      <th>RIONEGRO</th>
-      <td>2486.12</td>
-    </tr>
-    <tr>
-      <th>SABANETA</th>
-      <td>2417.73</td>
-    </tr>
-    <tr>
-      <th rowspan="4" valign="top">ATLANTICO</th>
-      <th>BARRANQUILLA</th>
-      <td>2004.35</td>
-    </tr>
-    <tr>
-      <th>MALAMBO</th>
-      <td>2004.64</td>
-    </tr>
-    <tr>
-      <th>PUERTO COLOMBIA</th>
-      <td>2004.20</td>
-    </tr>
-    <tr>
-      <th>SOLEDAD</th>
-      <td>1974.32</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">BOLIVAR</th>
-      <th>CARTAGENA DE INDIAS</th>
-      <td>1978.21</td>
-    </tr>
-    <tr>
-      <th>TURBACO</th>
-      <td>1925.91</td>
-    </tr>
-    <tr>
-      <th rowspan="4" valign="top">BOYACA</th>
-      <th>CHIQUINQUIRA</th>
-      <td>2160.67</td>
-    </tr>
-    <tr>
-      <th>DUITAMA</th>
-      <td>2082.44</td>
-    </tr>
-    <tr>
-      <th>SOGAMOSO</th>
-      <td>1992.27</td>
-    </tr>
-    <tr>
-      <th>TUNJA</th>
-      <td>2083.41</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">CALDAS</th>
-      <th>CHINCHINA</th>
-      <td>2590.00</td>
-    </tr>
-    <tr>
-      <th>LA DORADA</th>
-      <td>2260.00</td>
-    </tr>
-    <tr>
-      <th>MANIZALES</th>
-      <td>2554.83</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">CASANARE</th>
-      <th>AGUAZUL</th>
-      <td>2199.00</td>
-    </tr>
-    <tr>
-      <th>YOPAL</th>
-      <td>2012.00</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">CAUCA</th>
-      <th>POPAYAN</th>
-      <td>2730.33</td>
-    </tr>
-    <tr>
-      <th>SANTANDER DE QUILICHAO</th>
-      <td>3009.18</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">CESAR</th>
-      <th>BOSCONIA</th>
-      <td>2013.89</td>
-    </tr>
-    <tr>
-      <th>PAILITAS</th>
-      <td>2026.33</td>
-    </tr>
-    <tr>
-      <th>VALLEDUPAR</th>
-      <td>1927.56</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">CORDOBA</th>
-      <th>MONTERIA</th>
-      <td>2121.35</td>
-    </tr>
-    <tr>
-      <th>PLANETA RICA</th>
-      <td>2141.00</td>
-    </tr>
-    <tr>
-      <th>SAHAGUN</th>
-      <td>2143.67</td>
-    </tr>
-    <tr>
-      <th rowspan="9" valign="top">CUNDINAMARCA</th>
-      <th>CHIA</th>
-      <td>2145.11</td>
-    </tr>
-    <tr>
-      <th>COTA</th>
-      <td>1956.55</td>
-    </tr>
-    <tr>
-      <th>FACATATIVA</th>
-      <td>2143.33</td>
-    </tr>
-    <tr>
-      <th>FUNZA</th>
-      <td>2134.71</td>
-    </tr>
-    <tr>
-      <th>FUSAGASUGA</th>
-      <td>2299.00</td>
-    </tr>
-    <tr>
-      <th>LA MESA</th>
-      <td>2125.67</td>
-    </tr>
-    <tr>
-      <th>MOSQUERA</th>
-      <td>2175.86</td>
-    </tr>
-    <tr>
-      <th>SOACHA</th>
-      <td>2058.64</td>
-    </tr>
-    <tr>
-      <th>SOPO</th>
-      <td>2219.00</td>
-    </tr>
-    <tr>
-      <th>HUILA</th>
-      <th>NEIVA</th>
-      <td>2479.80</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">MAGDALENA</th>
-      <th>CIENAGA</th>
-      <td>2077.60</td>
-    </tr>
-    <tr>
-      <th>SANTA MARTA</th>
-      <td>2050.92</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">META</th>
-      <th>CUMARAL</th>
-      <td>2099.00</td>
-    </tr>
-    <tr>
-      <th>VILLAVICENCIO</th>
-      <td>2281.97</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">QUINDIO</th>
-      <th>ARMENIA</th>
-      <td>2703.12</td>
-    </tr>
-    <tr>
-      <th>CALARCA</th>
-      <td>2593.58</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">RISARALDA</th>
-      <th>DOSQUEBRADAS</th>
-      <td>2216.21</td>
-    </tr>
-    <tr>
-      <th>PEREIRA</th>
-      <td>2232.29</td>
-    </tr>
-    <tr>
-      <th>SANTAFE DE BOGOTA D.C</th>
-      <th>BOGOTA, D.C.</th>
-      <td>2016.52</td>
-    </tr>
-    <tr>
-      <th rowspan="7" valign="top">SANTANDER</th>
-      <th>BARBOSA</th>
-      <td>1980.67</td>
-    </tr>
-    <tr>
-      <th>BARRANCABERMEJA</th>
-      <td>2199.00</td>
-    </tr>
-    <tr>
-      <th>BUCARAMANGA</th>
-      <td>2153.05</td>
-    </tr>
-    <tr>
-      <th>FLORIDABLANCA</th>
-      <td>2305.57</td>
-    </tr>
-    <tr>
-      <th>GIRON</th>
-      <td>2345.22</td>
-    </tr>
-    <tr>
-      <th>LEBRIJA</th>
-      <td>2149.00</td>
-    </tr>
-    <tr>
-      <th>PIEDECUESTA</th>
-      <td>2249.00</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">SUCRE</th>
-      <th>COROZAL</th>
-      <td>2121.00</td>
-    </tr>
-    <tr>
-      <th>SAN PEDRO</th>
-      <td>1965.67</td>
-    </tr>
-    <tr>
-      <th>SINCELEJO</th>
-      <td>2200.23</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">TOLIMA</th>
-      <th>ARMERO</th>
-      <td>2489.33</td>
-    </tr>
-    <tr>
-      <th>ESPINAL</th>
-      <td>2691.00</td>
-    </tr>
-    <tr>
-      <th>IBAGUE</th>
-      <td>2278.28</td>
-    </tr>
-    <tr>
-      <th rowspan="9" valign="top">VALLE DEL CAUCA</th>
-      <th>BUENAVENTURA</th>
-      <td>2585.18</td>
-    </tr>
-    <tr>
-      <th>CALI</th>
-      <td>2590.39</td>
-    </tr>
-    <tr>
-      <th>CARTAGO</th>
-      <td>2494.29</td>
-    </tr>
-    <tr>
-      <th>FLORIDA</th>
-      <td>5885.00</td>
-    </tr>
-    <tr>
-      <th>GUADALAJARA DE BUGA</th>
-      <td>2047.18</td>
-    </tr>
-    <tr>
-      <th>JAMUNDI</th>
-      <td>2390.00</td>
-    </tr>
-    <tr>
-      <th>PALMIRA</th>
-      <td>2619.50</td>
-    </tr>
-    <tr>
-      <th>TULUA</th>
-      <td>2609.85</td>
-    </tr>
-    <tr>
-      <th>YUMBO</th>
-      <td>2327.17</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Departamento: CAUCA
+Municipio: SANTANDER DE QUILICHAO
+Precio Promedio Máximo: 2871.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2024</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">df_2023</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
     <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
 <span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Obtener el índice del máximo valor y el valor máximo</span>
+<span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>PRECIO_PROMEDIO_PUBLICADO</th>
-    </tr>
-    <tr>
-      <th>DEPARTAMENTO_EDS</th>
-      <th>MUNICIPIO_EDS</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="9" valign="top">ANTIOQUIA</th>
-      <th>APARTADO</th>
-      <td>2591.82</td>
-    </tr>
-    <tr>
-      <th>BARBOSA</th>
-      <td>2662.22</td>
-    </tr>
-    <tr>
-      <th>BELLO</th>
-      <td>2785.92</td>
-    </tr>
-    <tr>
-      <th>ENVIGADO</th>
-      <td>2805.83</td>
-    </tr>
-    <tr>
-      <th>ITAGUI</th>
-      <td>2844.00</td>
-    </tr>
-    <tr>
-      <th>LA CEJA</th>
-      <td>2945.67</td>
-    </tr>
-    <tr>
-      <th>MEDELLIN</th>
-      <td>2805.71</td>
-    </tr>
-    <tr>
-      <th>RIONEGRO</th>
-      <td>2704.42</td>
-    </tr>
-    <tr>
-      <th>SABANETA</th>
-      <td>2649.55</td>
-    </tr>
-    <tr>
-      <th rowspan="4" valign="top">ATLANTICO</th>
-      <th>BARRANQUILLA</th>
-      <td>2453.48</td>
-    </tr>
-    <tr>
-      <th>MALAMBO</th>
-      <td>2269.08</td>
-    </tr>
-    <tr>
-      <th>PUERTO COLOMBIA</th>
-      <td>2485.83</td>
-    </tr>
-    <tr>
-      <th>SOLEDAD</th>
-      <td>2142.05</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">BOLIVAR</th>
-      <th>CARTAGENA DE INDIAS</th>
-      <td>2296.71</td>
-    </tr>
-    <tr>
-      <th>TURBACO</th>
-      <td>2359.00</td>
-    </tr>
-    <tr>
-      <th rowspan="5" valign="top">BOYACA</th>
-      <th>CHIQUINQUIRA</th>
-      <td>2498.15</td>
-    </tr>
-    <tr>
-      <th>DUITAMA</th>
-      <td>2249.89</td>
-    </tr>
-    <tr>
-      <th>SOGAMOSO</th>
-      <td>2227.83</td>
-    </tr>
-    <tr>
-      <th>SOTAQUIRA</th>
-      <td>2499.00</td>
-    </tr>
-    <tr>
-      <th>TUNJA</th>
-      <td>2297.89</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">CALDAS</th>
-      <th>LA DORADA</th>
-      <td>2715.33</td>
-    </tr>
-    <tr>
-      <th>MANIZALES</th>
-      <td>2920.93</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">CASANARE</th>
-      <th>AGUAZUL</th>
-      <td>2299.00</td>
-    </tr>
-    <tr>
-      <th>YOPAL</th>
-      <td>2107.47</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">CAUCA</th>
-      <th>POPAYAN</th>
-      <td>3383.40</td>
-    </tr>
-    <tr>
-      <th>SANTANDER DE QUILICHAO</th>
-      <td>3141.00</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">CESAR</th>
-      <th>BOSCONIA</th>
-      <td>2476.13</td>
-    </tr>
-    <tr>
-      <th>PAILITAS</th>
-      <td>2404.00</td>
-    </tr>
-    <tr>
-      <th>VALLEDUPAR</th>
-      <td>2453.00</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">CORDOBA</th>
-      <th>MONTERIA</th>
-      <td>2597.00</td>
-    </tr>
-    <tr>
-      <th>PLANETA RICA</th>
-      <td>2608.92</td>
-    </tr>
-    <tr>
-      <th>SAHAGUN</th>
-      <td>2370.00</td>
-    </tr>
-    <tr>
-      <th rowspan="8" valign="top">CUNDINAMARCA</th>
-      <th>CHIA</th>
-      <td>2371.23</td>
-    </tr>
-    <tr>
-      <th>COTA</th>
-      <td>1999.65</td>
-    </tr>
-    <tr>
-      <th>FACATATIVA</th>
-      <td>3120.00</td>
-    </tr>
-    <tr>
-      <th>FUNZA</th>
-      <td>2241.00</td>
-    </tr>
-    <tr>
-      <th>MADRID</th>
-      <td>2299.00</td>
-    </tr>
-    <tr>
-      <th>MOSQUERA</th>
-      <td>2393.97</td>
-    </tr>
-    <tr>
-      <th>SOACHA</th>
-      <td>2302.00</td>
-    </tr>
-    <tr>
-      <th>SOPO</th>
-      <td>2344.00</td>
-    </tr>
-    <tr>
-      <th>HUILA</th>
-      <th>NEIVA</th>
-      <td>2906.91</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">MAGDALENA</th>
-      <th>CIENAGA</th>
-      <td>2416.50</td>
-    </tr>
-    <tr>
-      <th>SANTA MARTA</th>
-      <td>2526.58</td>
-    </tr>
-    <tr>
-      <th>SITIONUEVO</th>
-      <td>1976.67</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">META</th>
-      <th>CUMARAL</th>
-      <td>2355.00</td>
-    </tr>
-    <tr>
-      <th>VILLAVICENCIO</th>
-      <td>2833.45</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">QUINDIO</th>
-      <th>ARMENIA</th>
-      <td>2983.11</td>
-    </tr>
-    <tr>
-      <th>CALARCA</th>
-      <td>2824.67</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">RISARALDA</th>
-      <th>DOSQUEBRADAS</th>
-      <td>2488.00</td>
-    </tr>
-    <tr>
-      <th>PEREIRA</th>
-      <td>2594.94</td>
-    </tr>
-    <tr>
-      <th>SANTAFE DE BOGOTA D.C</th>
-      <th>BOGOTA, D.C.</th>
-      <td>2216.99</td>
-    </tr>
-    <tr>
-      <th rowspan="7" valign="top">SANTANDER</th>
-      <th>BARBOSA</th>
-      <td>2325.96</td>
-    </tr>
-    <tr>
-      <th>BARRANCABERMEJA</th>
-      <td>2459.00</td>
-    </tr>
-    <tr>
-      <th>BUCARAMANGA</th>
-      <td>2468.42</td>
-    </tr>
-    <tr>
-      <th>FLORIDABLANCA</th>
-      <td>2365.12</td>
-    </tr>
-    <tr>
-      <th>GIRON</th>
-      <td>2572.00</td>
-    </tr>
-    <tr>
-      <th>LEBRIJA</th>
-      <td>2199.00</td>
-    </tr>
-    <tr>
-      <th>PIEDECUESTA</th>
-      <td>2699.33</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SUCRE</th>
-      <th>COROZAL</th>
-      <td>2610.71</td>
-    </tr>
-    <tr>
-      <th>SINCELEJO</th>
-      <td>2518.41</td>
-    </tr>
-    <tr>
-      <th>TOLIMA</th>
-      <th>IBAGUE</th>
-      <td>2534.97</td>
-    </tr>
-    <tr>
-      <th rowspan="9" valign="top">VALLE DEL CAUCA</th>
-      <th>BUENAVENTURA</th>
-      <td>2840.33</td>
-    </tr>
-    <tr>
-      <th>CALI</th>
-      <td>2884.50</td>
-    </tr>
-    <tr>
-      <th>CARTAGO</th>
-      <td>2695.64</td>
-    </tr>
-    <tr>
-      <th>GUADALAJARA DE BUGA</th>
-      <td>1776.83</td>
-    </tr>
-    <tr>
-      <th>JAMUNDI</th>
-      <td>2885.00</td>
-    </tr>
-    <tr>
-      <th>PALMIRA</th>
-      <td>3029.28</td>
-    </tr>
-    <tr>
-      <th>RIOFRIO</th>
-      <td>2511.00</td>
-    </tr>
-    <tr>
-      <th>TULUA</th>
-      <td>2939.00</td>
-    </tr>
-    <tr>
-      <th>YUMBO</th>
-      <td>2560.22</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_2025</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span><span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
-    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
-<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Departamento: </span><span class="si">{</span><span class="n">departamento_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Municipio: </span><span class="si">{</span><span class="n">municipio_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Precio Promedio Máximo: </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>PRECIO_PROMEDIO_PUBLICADO</th>
-    </tr>
-    <tr>
-      <th>DEPARTAMENTO_EDS</th>
-      <th>MUNICIPIO_EDS</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="7" valign="top">ANTIOQUIA</th>
-      <th>APARTADO</th>
-      <td>3190.00</td>
-    </tr>
-    <tr>
-      <th>BARBOSA</th>
-      <td>3990.00</td>
-    </tr>
-    <tr>
-      <th>BELLO</th>
-      <td>3706.43</td>
-    </tr>
-    <tr>
-      <th>ENVIGADO</th>
-      <td>3523.33</td>
-    </tr>
-    <tr>
-      <th>ITAGUI</th>
-      <td>3540.00</td>
-    </tr>
-    <tr>
-      <th>MEDELLIN</th>
-      <td>3696.31</td>
-    </tr>
-    <tr>
-      <th>SABANETA</th>
-      <td>3990.00</td>
-    </tr>
-    <tr>
-      <th rowspan="4" valign="top">ATLANTICO</th>
-      <th>BARRANQUILLA</th>
-      <td>2898.45</td>
-    </tr>
-    <tr>
-      <th>MALAMBO</th>
-      <td>2744.67</td>
-    </tr>
-    <tr>
-      <th>PUERTO COLOMBIA</th>
-      <td>2988.67</td>
-    </tr>
-    <tr>
-      <th>SOLEDAD</th>
-      <td>2572.00</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">BOLIVAR</th>
-      <th>CARTAGENA DE INDIAS</th>
-      <td>2871.71</td>
-    </tr>
-    <tr>
-      <th>TURBACO</th>
-      <td>2827.00</td>
-    </tr>
-    <tr>
-      <th rowspan="5" valign="top">BOYACA</th>
-      <th>CHIQUINQUIRA</th>
-      <td>2674.25</td>
-    </tr>
-    <tr>
-      <th>DUITAMA</th>
-      <td>2359.25</td>
-    </tr>
-    <tr>
-      <th>SOGAMOSO</th>
-      <td>2499.00</td>
-    </tr>
-    <tr>
-      <th>SOTAQUIRA</th>
-      <td>2399.00</td>
-    </tr>
-    <tr>
-      <th>TUNJA</th>
-      <td>2567.25</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">CALDAS</th>
-      <th>LA DORADA</th>
-      <td>3149.00</td>
-    </tr>
-    <tr>
-      <th>MANIZALES</th>
-      <td>3734.11</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">CASANARE</th>
-      <th>AGUAZUL</th>
-      <td>3099.00</td>
-    </tr>
-    <tr>
-      <th>PAZ DE ARIPORO</th>
-      <td>2313.00</td>
-    </tr>
-    <tr>
-      <th>YOPAL</th>
-      <td>2369.00</td>
-    </tr>
-    <tr>
-      <th>CAUCA</th>
-      <th>POPAYAN</th>
-      <td>3682.00</td>
-    </tr>
-    <tr>
-      <th rowspan="4" valign="top">CESAR</th>
-      <th>AGUACHICA</th>
-      <td>2619.00</td>
-    </tr>
-    <tr>
-      <th>BOSCONIA</th>
-      <td>2904.67</td>
-    </tr>
-    <tr>
-      <th>PAILITAS</th>
-      <td>2459.00</td>
-    </tr>
-    <tr>
-      <th>VALLEDUPAR</th>
-      <td>2840.00</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">CORDOBA</th>
-      <th>MONTERIA</th>
-      <td>2684.33</td>
-    </tr>
-    <tr>
-      <th>PLANETA RICA</th>
-      <td>2998.67</td>
-    </tr>
-    <tr>
-      <th>SAHAGUN</th>
-      <td>2910.00</td>
-    </tr>
-    <tr>
-      <th rowspan="6" valign="top">CUNDINAMARCA</th>
-      <th>CHIA</th>
-      <td>2514.17</td>
-    </tr>
-    <tr>
-      <th>COTA</th>
-      <td>2234.33</td>
-    </tr>
-    <tr>
-      <th>FUNZA</th>
-      <td>2519.00</td>
-    </tr>
-    <tr>
-      <th>MOSQUERA</th>
-      <td>2521.89</td>
-    </tr>
-    <tr>
-      <th>SOACHA</th>
-      <td>2439.86</td>
-    </tr>
-    <tr>
-      <th>SOPO</th>
-      <td>2499.00</td>
-    </tr>
-    <tr>
-      <th>HUILA</th>
-      <th>NEIVA</th>
-      <td>3300.00</td>
-    </tr>
-    <tr>
-      <th>LA GUAJIRA</th>
-      <th>RIOHACHA</th>
-      <td>2280.00</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">MAGDALENA</th>
-      <th>CIENAGA</th>
-      <td>2913.50</td>
-    </tr>
-    <tr>
-      <th>SANTA MARTA</th>
-      <td>2997.00</td>
-    </tr>
-    <tr>
-      <th>META</th>
-      <th>VILLAVICENCIO</th>
-      <td>3563.00</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">QUINDIO</th>
-      <th>ARMENIA</th>
-      <td>3758.80</td>
-    </tr>
-    <tr>
-      <th>CALARCA</th>
-      <td>3599.00</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">RISARALDA</th>
-      <th>DOSQUEBRADAS</th>
-      <td>3532.00</td>
-    </tr>
-    <tr>
-      <th>PEREIRA</th>
-      <td>3477.53</td>
-    </tr>
-    <tr>
-      <th>SANTAFE DE BOGOTA D.C</th>
-      <th>BOGOTA, D.C.</th>
-      <td>2437.89</td>
-    </tr>
-    <tr>
-      <th rowspan="5" valign="top">SANTANDER</th>
-      <th>BARBOSA</th>
-      <td>2345.00</td>
-    </tr>
-    <tr>
-      <th>BUCARAMANGA</th>
-      <td>2807.00</td>
-    </tr>
-    <tr>
-      <th>FLORIDABLANCA</th>
-      <td>2999.00</td>
-    </tr>
-    <tr>
-      <th>GIRON</th>
-      <td>2849.00</td>
-    </tr>
-    <tr>
-      <th>PIEDECUESTA</th>
-      <td>3400.00</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">SUCRE</th>
-      <th>COROZAL</th>
-      <td>2879.00</td>
-    </tr>
-    <tr>
-      <th>SINCELEJO</th>
-      <td>2658.50</td>
-    </tr>
-    <tr>
-      <th>TOLIMA</th>
-      <th>IBAGUE</th>
-      <td>3049.00</td>
-    </tr>
-    <tr>
-      <th rowspan="9" valign="top">VALLE DEL CAUCA</th>
-      <th>CALI</th>
-      <td>3195.49</td>
-    </tr>
-    <tr>
-      <th>CARTAGO</th>
-      <td>3165.67</td>
-    </tr>
-    <tr>
-      <th>GUADALAJARA DE BUGA</th>
-      <td>2769.00</td>
-    </tr>
-    <tr>
-      <th>JAMUNDI</th>
-      <td>3350.00</td>
-    </tr>
-    <tr>
-      <th>LA UNION</th>
-      <td>3300.00</td>
-    </tr>
-    <tr>
-      <th>PALMIRA</th>
-      <td>3529.00</td>
-    </tr>
-    <tr>
-      <th>RIOFRIO</th>
-      <td>2990.00</td>
-    </tr>
-    <tr>
-      <th>TULUA</th>
-      <td>3400.62</td>
-    </tr>
-    <tr>
-      <th>YUMBO</th>
-      <td>2746.00</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Departamento: VALLE DEL CAUCA
+Municipio: FLORIDA
+Precio Promedio Máximo: 5885.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geojson_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/Colombia.geo.json&#39;</span>
-<span class="n">colombia_geo</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">geojson_url</span><span class="p">)</span>
-<span class="n">colombia_geo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">df_2024</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Obtener el índice del máximo valor y el valor máximo</span>
+<span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Departamento: </span><span class="si">{</span><span class="n">departamento_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Municipio: </span><span class="si">{</span><span class="n">municipio_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Precio Promedio Máximo: </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Departamento: CAUCA
+Municipio: POPAYAN
+Precio Promedio Máximo: 3383.4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">df_2025</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;DEPARTAMENTO_EDS&#39;</span><span class="p">,</span> <span class="s1">&#39;MUNICIPIO_EDS&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="c1"># Obtener el índice del máximo valor y el valor máximo</span>
+<span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DPTO</th>
-      <th>NOMBRE_DPT</th>
-      <th>AREA</th>
-      <th>PERIMETER</th>
-      <th>HECTARES</th>
-      <th>geometry</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>05</td>
-      <td>ANTIOQUIA</td>
-      <td>6.335186e+10</td>
-      <td>1963728.843</td>
-      <td>6.335186e+06</td>
-      <td>POLYGON ((-76.3073 8.6193, -76.2981 8.6164, -7...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>08</td>
-      <td>ATLANTICO</td>
-      <td>3.360765e+09</td>
-      <td>240936.172</td>
-      <td>3.360765e+05</td>
-      <td>POLYGON ((-74.8706 10.3612, -74.8764 10.3433, ...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>11</td>
-      <td>SANTAFE DE BOGOTA D.C</td>
-      <td>1.650948e+09</td>
-      <td>323322.540</td>
-      <td>1.650948e+05</td>
-      <td>POLYGON ((-74.0229 4.7951, -74.0264 4.7836, -7...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>13</td>
-      <td>BOLIVAR</td>
-      <td>2.614189e+10</td>
-      <td>1309427.968</td>
-      <td>2.614189e+06</td>
-      <td>POLYGON ((-75.1595 10.4236, -75.1543 10.4097, ...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>15</td>
-      <td>BOYACA</td>
-      <td>2.335258e+10</td>
-      <td>1364539.911</td>
-      <td>2.335258e+06</td>
-      <td>POLYGON ((-72.213 7.0275, -72.2061 7.0246, -72...</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>17</td>
-      <td>CALDAS</td>
-      <td>7.558200e+09</td>
-      <td>603282.457</td>
-      <td>7.558200e+05</td>
-      <td>POLYGON ((-74.695 5.7527, -74.6847 5.751, -74....</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>18</td>
-      <td>CAQUETA</td>
-      <td>9.018087e+10</td>
-      <td>1888506.901</td>
-      <td>9.018087e+06</td>
-      <td>POLYGON ((-74.6926 2.4978, -74.6891 2.4793, -7...</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>19</td>
-      <td>CAUCA</td>
-      <td>2.974279e+10</td>
-      <td>1243388.952</td>
-      <td>2.974279e+06</td>
-      <td>MULTIPOLYGON (((-78.21162 2.97511, -78.2489 2....</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>20</td>
-      <td>CESAR</td>
-      <td>2.297310e+10</td>
-      <td>1080343.678</td>
-      <td>2.297310e+06</td>
-      <td>POLYGON ((-73.28232 10.85625, -73.28062 10.838...</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>23</td>
-      <td>CORDOBA</td>
-      <td>2.505949e+10</td>
-      <td>814093.372</td>
-      <td>2.505949e+06</td>
-      <td>POLYGON ((-75.8195 9.423, -75.8091 9.4195, -75...</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>25</td>
-      <td>CUNDINAMARCA</td>
-      <td>2.280026e+10</td>
-      <td>1164175.024</td>
-      <td>2.280026e+06</td>
-      <td>POLYGON ((-74.3296 5.7489, -74.329 5.7414, -74...</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>27</td>
-      <td>CHOCO</td>
-      <td>4.683852e+10</td>
-      <td>1797897.873</td>
-      <td>4.683852e+06</td>
-      <td>POLYGON ((-77.0213 8.2717, -77.0138 8.2716, -7...</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>41</td>
-      <td>HUILA</td>
-      <td>2.031870e+10</td>
-      <td>929144.166</td>
-      <td>2.031870e+06</td>
-      <td>POLYGON ((-74.636 3.2739, -74.6469 3.2543, -74...</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>44</td>
-      <td>LA GUAJIRA</td>
-      <td>2.101235e+10</td>
-      <td>936598.020</td>
-      <td>2.101235e+06</td>
-      <td>POLYGON ((-71.6212 12.4235, -71.5981 12.4171, ...</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>47</td>
-      <td>MAGDALENA</td>
-      <td>2.284639e+10</td>
-      <td>916642.470</td>
-      <td>2.284639e+06</td>
-      <td>POLYGON ((-74.0918 11.3277, -74.0826 11.3242, ...</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>50</td>
-      <td>META</td>
-      <td>8.538969e+10</td>
-      <td>1680541.812</td>
-      <td>8.538969e+06</td>
-      <td>POLYGON ((-71.0799 4.4449, -71.0861 4.1873, -7...</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>52</td>
-      <td>NARIÑO</td>
-      <td>3.328305e+10</td>
-      <td>1015680.966</td>
-      <td>3.328305e+06</td>
-      <td>POLYGON ((-77.9836 2.5774, -77.9784 2.5641, -7...</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>54</td>
-      <td>NORTE DE SANTANDER</td>
-      <td>2.144333e+10</td>
-      <td>914288.244</td>
-      <td>2.144333e+06</td>
-      <td>POLYGON ((-73.0178 9.134, -73.0224 9.1242, -73...</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>63</td>
-      <td>QUINDIO</td>
-      <td>1.732026e+09</td>
-      <td>207948.857</td>
-      <td>1.732026e+05</td>
-      <td>POLYGON ((-75.6721 4.6946, -75.6623 4.694, -75...</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>66</td>
-      <td>RISARALDA</td>
-      <td>4.042733e+09</td>
-      <td>436988.677</td>
-      <td>4.042733e+05</td>
-      <td>POLYGON ((-75.88651 5.47514, -75.88677 5.47178...</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>68</td>
-      <td>SANTANDER</td>
-      <td>3.029022e+10</td>
-      <td>1036566.662</td>
-      <td>3.029022e+06</td>
-      <td>POLYGON ((-73.80014 8.11503, -73.796 8.1132, -...</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>70</td>
-      <td>SUCRE</td>
-      <td>1.082379e+10</td>
-      <td>688869.681</td>
-      <td>1.082379e+06</td>
-      <td>POLYGON ((-75.4831 9.8849, -75.4791 9.8785, -7...</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>73</td>
-      <td>TOLIMA</td>
-      <td>2.342127e+10</td>
-      <td>853045.779</td>
-      <td>2.342127e+06</td>
-      <td>POLYGON ((-74.84 5.2814, -74.821 5.2808, -74.8...</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>76</td>
-      <td>VALLE DEL CAUCA</td>
-      <td>2.214683e+10</td>
-      <td>995449.434</td>
-      <td>2.214683e+06</td>
-      <td>POLYGON ((-76.0838 4.9736, -76.0677 4.9602, -7...</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>81</td>
-      <td>ARAUCA</td>
-      <td>2.419638e+10</td>
-      <td>843446.026</td>
-      <td>2.419638e+06</td>
-      <td>POLYGON ((-70.6987 7.0593, -70.6935 7.0529, -7...</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>85</td>
-      <td>CASANARE</td>
-      <td>4.471409e+10</td>
-      <td>1101844.910</td>
-      <td>4.471409e+06</td>
-      <td>POLYGON ((-70.1725 6.2479, -70.1679 6.2403, -7...</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>86</td>
-      <td>PUTUMAYO</td>
-      <td>2.470768e+10</td>
-      <td>1194372.666</td>
-      <td>2.470768e+06</td>
-      <td>POLYGON ((-76.5781 1.3164, -76.5671 1.2661, -7...</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>91</td>
-      <td>AMAZONAS</td>
-      <td>1.100294e+11</td>
-      <td>2562641.642</td>
-      <td>1.100294e+07</td>
-      <td>POLYGON ((-71.3864 0.1186, -71.3761 0.1116, -7...</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>94</td>
-      <td>GUAINIA</td>
-      <td>7.211149e+10</td>
-      <td>1882807.190</td>
-      <td>7.211149e+06</td>
-      <td>POLYGON ((-67.6878 3.8605, -67.6826 3.8443, -6...</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>95</td>
-      <td>GUAVIARE</td>
-      <td>5.567148e+10</td>
-      <td>1555059.349</td>
-      <td>5.567148e+06</td>
-      <td>POLYGON ((-71.2646 2.8375, -71.2594 2.8335, -7...</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>97</td>
-      <td>VAUPES</td>
-      <td>5.308784e+10</td>
-      <td>1666564.449</td>
-      <td>5.308784e+06</td>
-      <td>POLYGON ((-70.113 1.9853, -70.1147 1.9761, -70...</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>99</td>
-      <td>VICHADA</td>
-      <td>1.000553e+11</td>
-      <td>1781121.957</td>
-      <td>1.000553e+07</td>
-      <td>POLYGON ((-67.7969 6.2795, -67.7681 6.2719, -6...</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>88</td>
-      <td>ARCHIPIELAGO DE SAN ANDRES PROVIDENCIA Y SANTA...</td>
-      <td>4.960252e+07</td>
-      <td>71946.251</td>
-      <td>4.960252e+03</td>
-      <td>MULTIPOLYGON (((-81.71296 12.59456, -81.71284 ...</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_index</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">max_value</span> <span class="o">=</span> <span class="n">resultado</span><span class="p">[</span><span class="s1">&#39;PRECIO_PROMEDIO_PUBLICADO&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">departamento_maximo</span><span class="p">,</span> <span class="n">municipio_maximo</span> <span class="o">=</span> <span class="n">max_index</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Departamento: </span><span class="si">{</span><span class="n">departamento_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Municipio: </span><span class="si">{</span><span class="n">municipio_maximo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Precio Promedio Máximo: </span><span class="si">{</span><span class="n">max_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Departamento: ANTIOQUIA
+Municipio: BARBOSA
+Precio Promedio Máximo: 3990.0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3023,6 +1846,7 @@ Name: MUNICIPIO_EDS, dtype: int64
 </div>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3082,7 +1906,10 @@ Name: MUNICIPIO_EDS, dtype: int64
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sebastian-alfonso-perez-albor">Sebastián Alfonso Pérez Albor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-y-modulos-necesarios"><strong>Líbrerias y modulos necesarios</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunto-de-datos"><strong>Conjunto de datos</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-general-del-conjunto-de-datos"><strong>Análisis general del conjunto de datos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-general-del-conjunto-de-datos"><strong>Análisis general del conjunto de datos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion-de-varibles-innecesarias"><strong>Eliminación de Varibles innecesarias</strong></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
